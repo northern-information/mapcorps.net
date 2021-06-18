@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 {% include head.html %}
+{% include header.html %}
 <body>
-<main class="container-fluid">
+<main class="container-fluid my-3">
   <div class="row">
     <div class="col">
       {{ content }}
     </div>
   </div>
 </main>
-{% include javascript.html %}
+{% include footer.html %}
 </body>
 </html>
