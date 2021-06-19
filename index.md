@@ -40,5 +40,6 @@ All proceeds will be donated to the <a href="https://www.ucsusa.org/">Union of C
  - [EXEGESIS](https://northern-information.github.io/mapcore)
  - [GITHUB](https://github.com/northern-information/mapcorps.net)
  - [BANDCAMP](https://mapcorps.bandcamp.com)
+ - [.](/assets/images/ai.png)
 
 ---
