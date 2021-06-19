@@ -29,7 +29,7 @@ body {
 h1, h2 {
   font-family: "Michroma", sans-serif; }
 
-a, a:link, a:hover, a:active, a:visited {
+a, a:link, a:active, a:visited {
   color: #0000FF; }
 
 a.log-nav {
@@ -39,6 +39,12 @@ a.log-nav {
 a.log-nav:hover,
 a.log-nav.active {
   color: #EEEEEE;
+  background: #0000FF; }
+
+.log-content img {
+  width: 100%;
+  height: auto;
+  border: 5px solid transparent;
   background: #0000FF; }
 
 main h2 {
@@ -101,7 +107,9 @@ header .logo {
   border-radius: 50%;
   display: inline-block;
   margin: 10px;
-  border: 4px solid #CCCCCC;
+  border: 4px solid #CCCCCC; }
+
+.global-warming, a:hover, .log-content img:hover, header .logo {
   -webkit-animation: rgb-cycle 10s linear 0s infinite normal;
   -moz-animation: rgb-cycle 10s linear 0s infinite normal;
   -ms-animation: rgb-cycle 10s linear 0s infinite normal;

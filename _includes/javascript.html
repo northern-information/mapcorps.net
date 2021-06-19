@@ -85,7 +85,18 @@ $(function() {
   $('.log-content').each(function() { $(this).hide() });
   var hash = window.location.hash.substr(1) == "" ? 1 : window.location.hash.substr(1);
   $("[data-content-id='" + hash + "']").click();
+
+  /*
+   * Make all post images link to high res versions of themsleves.
+   * The other options besides JS were to do it in markdown which is an awful author/writing
+   * experience or extend Jekyll to do this during compilation. This was 3 lines.
+   */
+  $('.log-content img').each(function() {
+    $(this).wrap('<a href="' + this.src + '"></a>');
+  });
+
 });
+
 </script>
 {% endif %}
 

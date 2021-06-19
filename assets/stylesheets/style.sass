@@ -1,14 +1,15 @@
+// variables
+
 $black: #111111
 $grey: #CCCCCC
 $white: #EEEEEE
 $red: #FF0000
 $blue: #0000FF
 $green: #00FF00
-
 $display: 'Michroma', sans-serif
 $body: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 
-
+// university of maps
 
 #university 
   width: 100%
@@ -26,11 +27,7 @@ $body: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New"
   padding: 0
   float: left
 
-
-
-
-
-
+// global
 
 ::selection
   background: $green
@@ -47,8 +44,11 @@ body
 h1, h2
   font-family: $display
 
-a, a:link, a:hover, a:active, a:visited
+a, a:link, a:active, a:visited
   color: $blue
+
+a:hover
+  @extend .global-warming
 
 a.log-nav
   color: $blue
@@ -58,6 +58,14 @@ a.log-nav:hover,
 a.log-nav.active
   color: $white
   background: $blue
+
+.log-content img
+  width: 100%
+  height: auto
+  border: 5px solid transparent
+  background: $blue
+  &:hover
+    @extend .global-warming
 
 main
   h2
@@ -124,10 +132,15 @@ header
     display: inline-block
     margin: 10px
     border: 4px solid $grey
-    -webkit-animation: rgb-cycle 10s linear 0s infinite normal
-    -moz-animation: rgb-cycle 10s linear 0s infinite normal
-    -ms-animation: rgb-cycle 10s linear 0s infinite normal
-    animation: rgb-cycle 10s linear 0s infinite normal
+    @extend .global-warming
+
+// animations
+
+.global-warming
+  -webkit-animation: rgb-cycle 10s linear 0s infinite normal
+  -moz-animation: rgb-cycle 10s linear 0s infinite normal
+  -ms-animation: rgb-cycle 10s linear 0s infinite normal
+  animation: rgb-cycle 10s linear 0s infinite normal
 
 @-webkit-keyframes rgb-cycle
   0%
