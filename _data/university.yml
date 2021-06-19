@@ -1,0 +1,13 @@
+- id: 1
+  ascii: "@"
+  x: 10
+  y: 20
+  class: green
+  attributes: ['hydrogen', 'argon', 'helium', 'oxygen']
+
+- id: 2
+  ascii: "$"
+  x: 2
+  y: 5
+  class: red
+  attributes: ['carbon', 'plutonium']
