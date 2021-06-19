@@ -36,6 +36,9 @@ $body: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New"
   background: $green
   color: $red
 
+.no-padding
+  padding: 0
+
 body
   background: $white
   color: $black
@@ -46,6 +49,15 @@ h1, h2
 
 a, a:link, a:hover, a:active, a:visited
   color: $blue
+
+a.log-nav
+  color: $blue
+  cursor: pointer
+
+a.log-nav:hover,
+a.log-nav.active
+  color: $white
+  background: $blue
 
 main
   h2

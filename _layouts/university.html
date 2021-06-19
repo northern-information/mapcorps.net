@@ -1,13 +1,25 @@
 ---
 layout: default
 ---
-<div class="container-fluid">
+<div class="container-fluid no-padding">
   <div class="row">
-    <div class="col-md-4 col-sm-12">
-      <h2>DATA</h2>
-      <p>depending on what's clicked, info from the universtity.yml dumps out here maybe?</p>
+    <div class="col-md-6 col-sm-12">
+      <h2>LOGS</h2>
+      {% assign logs = site.logs %}
+      {% for log in site.logs %}
+        <a href="#{{ log.content_id }}" class="log-nav" data-content-id="{{ log.content_id }}">{{ log.content_id }}</a>
+      {% endfor %}
+      <hr>
+      {% for log in site.logs %}
+        <div class="log-content log-{{ log.content_id }}">
+          <pre>log.content_id: {{ log.content_id }}</pre>
+          {{ log.content | markdownify }}
+          <hr>
+        </div>
+      {% endfor %}
+    </ul>
     </div>
-    <div class="col-md-8 col-sm-12">
+    <div class="col-md-6 col-sm-12">
       <div id="university"></div>
     </div>
   </div>

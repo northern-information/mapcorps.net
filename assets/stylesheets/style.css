@@ -18,6 +18,9 @@
   background: #00FF00;
   color: #FF0000; }
 
+.no-padding {
+  padding: 0; }
+
 body {
   background: #EEEEEE;
   color: #111111;
@@ -28,6 +31,15 @@ h1, h2 {
 
 a, a:link, a:hover, a:active, a:visited {
   color: #0000FF; }
+
+a.log-nav {
+  color: #0000FF;
+  cursor: pointer; }
+
+a.log-nav:hover,
+a.log-nav.active {
+  color: #EEEEEE;
+  background: #0000FF; }
 
 main h2 {
   color: #00FF00; }
