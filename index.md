@@ -24,11 +24,14 @@ MAPSQUEST will be released on July 4th, 2021. This compilation album features ma
  - colmkil
  - What We Talk About
  - Non Verbal Poetry
+ - Sent≠Received
  - run riot run
  - LA EL
  - Obakegaku
  - STUXNET
  - Konstantine
+ - Inconvenient Body
+ - Crystal Crumb
 
 All proceeds will be donated to the <a href="https://www.ucsusa.org/">Union of Concerned Scientists</a>.
 
