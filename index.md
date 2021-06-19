@@ -30,6 +30,8 @@ MAPSQUEST will be released on July 4th, 2021. This compilation album features ma
  - Obakegaku
  - STUXNET
  - Konstantine
+ - Inconvenient Body
+ - Crystal Crumb
 
 All proceeds will be donated to the <a href="https://www.ucsusa.org/">Union of Concerned Scientists</a>.
 
