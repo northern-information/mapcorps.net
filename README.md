@@ -2,8 +2,8 @@
 
 - [Jekyll](https://jekyllrb.com/docs/installation/) - Follow install instructions here.
 - [SASS](https://sass-lang.com/install) - Follow install instructions here.
-- [Bootstrap 4.0.0](https://getbootstrap.com/docs/4.0/getting-started/introduction/) via CDN
-- [jQuery 3.2.1](https://jquery.com/) via CDN
+- [Bootstrap 4.0.0](https://getbootstrap.com/docs/4.0/getting-started/introduction/) via CDN.
+- [jQuery 3.2.1](https://jquery.com/) via CDN.
 
 ## Local Development Instructions
 
