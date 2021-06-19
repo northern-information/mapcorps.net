@@ -34,7 +34,10 @@ a, a:link, a:active, a:visited {
 
 a.log-nav {
   color: #0000FF;
-  cursor: pointer; }
+  cursor: pointer;
+  padding: 50px 5px 0 5px;
+  display: inline-block;
+  background: #CCCCCC; }
 
 a.log-nav:hover,
 a.log-nav.active {
@@ -46,6 +49,13 @@ a.log-nav.active {
   height: auto;
   border: 5px solid transparent;
   background: #0000FF; }
+
+code {
+  color: #EEEEEE;
+  background: #0000FF;
+  display: block;
+  padding: 5px;
+  border-radius: 5px; }
 
 main h2 {
   color: #00FF00; }

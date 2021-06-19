@@ -11,8 +11,16 @@ layout: default
       {% endfor %}
       <hr>
       {% for log in site.logs %}
-        <div class="log-content log-{{ log.content_id }}">
-          <pre>log.content_id: {{ log.content_id }}</pre>
+        <div class="log-content log-{{ log.content_id }}" style="display: none;">
+          <code class="my-3">
+          log.content_id: {{ log.content_id }} <br>
+          log.author: {{ log.author }} <br>
+          log.ascii: {{ log.ascii }} <br>
+          log.x: {{ log.x }} <br>
+          log.y: {{ log.y }} <br>
+          log.class: {{ log.class }} <br>
+          log.attributes: {{ log.attributes | join: ", " }}
+          </code>
           {{ log.content | markdownify }}
           <hr>
         </div>

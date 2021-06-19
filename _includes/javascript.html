@@ -9,22 +9,23 @@
 <script>
 
 /*
- * Step 1: build our data structure out from _data/university.yml so JS can access.
+ * Step 1: build our data structure out from collections/_logs/*.md so JS can access.
  */
 var university = [];
-{% assign points_of_interest = site.data.university | sort: "id" %}
-{% for point in points_of_interest %}
-  var o_{{ point.id }} = {};
-  o_{{ point.id }}["id"] = {{ point.id }};
-  o_{{ point.id }}["ascii"] = "{{ point.ascii }}";
-  o_{{ point.id }}["x"] = {{ point.x }};
-  o_{{ point.id }}["y"] = {{ point.y }};
-  o_{{ point.id }}["class"] = "{{ point.class }}";
+{% assign logs = site.logs | sort: "id" %}
+{% for log in logs %}
+  var o_{{ log.content_id }} = {};
+  o_{{ log.content_id }}["content_id"] = {{ log.content_id }};
+  o_{{ log.content_id }}["author"] = "{{ log.author }}";
+  o_{{ log.content_id }}["ascii"] = "{{ log.ascii }}";
+  o_{{ log.content_id }}["x"] = {{ log.x }};
+  o_{{ log.content_id }}["y"] = {{ log.y }};
+  o_{{ log.content_id }}["class"] = "{{ log.class }}";
   var a = [];
-  {% for attribute in point.attributes %}
+  {% for attribute in log.attributes %}
     a.push("{{ attribute }}");
   {% endfor %}
-  university.push(o_{{ point.id }});
+  university.push(o_{{ log.content_id }});
 {% endfor %}
 
 console.log(university);
@@ -78,18 +79,16 @@ $(function() {
     $(this).addClass("active");
     $('.log-content').each(function() { $(this).hide() });
     $('.log-' + content_id).show();
-    console.log($(this).data("content-id"));
   });
 
-  // Set the initial view by hiding all the logs and then clicking the first item.
-  $('.log-content').each(function() { $(this).hide() });
+  // Set the initial log view based on the anchor in the URL.
   var hash = window.location.hash.substr(1) == "" ? 1 : window.location.hash.substr(1);
   $("[data-content-id='" + hash + "']").click();
 
   /*
    * Make all post images link to high res versions of themsleves.
    * The other options besides JS were to do it in markdown which is an awful author/writing
-   * experience or extend Jekyll to do this during compilation. This was 3 lines.
+   * experience or extend Jekyll to do this during compilation. This is 3 lines.
    */
   $('.log-content img').each(function() {
     $(this).wrap('<a href="' + this.src + '"></a>');

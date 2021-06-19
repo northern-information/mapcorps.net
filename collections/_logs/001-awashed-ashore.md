@@ -1,5 +1,11 @@
 ---
 content_id: 1
+author: "Tyler"
+ascii: "@"
+x: 10
+y: 20
+class: green
+attributes: ["hydrogen", "argon", "helium", "oxygen"]
 ---
 Awashed ashore this island of stability, I blinked in the iridium light. Our waterlogged map slowly curling in the dry heat, old scribblings of trigonometry fading.
 

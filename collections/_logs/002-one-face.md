@@ -1,12 +1,18 @@
 ---
 content_id: 2
+author: "Ryan"
+ascii: "$"
+x: 2
+y: 5
+class: red
+attributes: ["carbon", "plutonium"]
 ---
 one face, then two, then three.
 the ideal count of load-bearing vectors.
 with an unhurried gesture, the light moves slightly,
 bringing into relief friendly contours.
 
-“Now I exist.”
+"Now I exist."
 
 verbal handshake, clock synchronization, report of specific musical queries:
 Ryan, reacquaint with the horizon line.
@@ -35,7 +41,7 @@ we watch one sister imprint her ripple on this excitation.
 this ripple changes shape, fades in proportion to the excitation.
 
 Trent describes recent live codings:
-triggering “longer samples” as opposed to one-shots.
+triggering "longer samples" as opposed to one-shots.
 (Ryan silently wonders:
 are these like loops, maybe slices?
 does a network of hidden parameters depend on when triggers arise?
