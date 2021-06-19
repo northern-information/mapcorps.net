@@ -114,9 +114,12 @@ header .horizons div
 header
   a, a:link, a:active, a:visited
     color: $black
+    display: inline-block
+    width: 100%
   a:hover
     color: $blue !important
-    h1
+    @extend .global-warming
+    h1  
       text-decoration: underline
     .logo
       border-color: $blue
