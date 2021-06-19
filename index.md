@@ -18,7 +18,7 @@ A territory that is always already defined — we can't reach it. The effect is 
 
 MAPSQUEST will be released on July 4th, 2021. This compilation album features mapcore artists:
 
-
+ - romjay
  - license
  - scanner darkly
  - colmkil
