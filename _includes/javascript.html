@@ -26,10 +26,13 @@ var university = [];
   o_{{ log.content_id }}["x"] = {{ log.x }};
   o_{{ log.content_id }}["y"] = {{ log.y }};
   o_{{ log.content_id }}["class"] = "{{ log.class }}";
+
   var a = [];
   {% for attribute in log.attributes %}
     a.push("{{ attribute }}");
   {% endfor %}
+  o_{{ log.content_id }}["attr"] = a;
+
   university.push(o_{{ log.content_id }});
 {% endfor %}
 
@@ -67,7 +70,7 @@ if (document.getElementById("university")) {
  * Step 3: profit.
  */
 
-// loop through univeristy
+// loop through university
 // get x and y
 // inject ascii character
 // inject css class
@@ -78,10 +81,18 @@ if (document.getElementById("university")) {
  * Left content area. Sorry for the jQuery. ¯\_(ツ)_/¯
  */
 function show_content(content_id) {
-    $("a.log-nav").each(function() { $(this).removeClass("active"); });
-    $("a.log-nav[data-content-id='" + content_id + "']").addClass("active");
-    $(".log-content").each(function() { $(this).hide() });
-    $(".log-"+ content_id).show();
+  $("a.log-nav").each(function() { $(this).removeClass("active"); });
+  $("a.log-nav[data-content-id='" + content_id + "']").addClass("active");
+  $(".log-content").each(function() { $(this).hide() });
+  $(".log-"+ content_id).show();
+}
+
+function isLocal(url) {
+  /*
+  - get host of url + current location
+  - check if same
+  - then we can do clicky things
+  */
 }
 
 $(function() {
@@ -91,7 +102,9 @@ $(function() {
   });
 
   // Inline log navigation.
+
   $("a").click(function() {
+    ///debugger;
     var content_id = $(this).attr("href").split("#")[1];
     if (content_id != null) {
       show_content(content_id);
@@ -99,7 +112,7 @@ $(function() {
   });
 
   // Set the initial log view based on the anchor in the URL.
-  var content_id = window.location.hash.substr(1) == "" ? 1 : window.location.hash.substr(1);
+  var content_id = window.location.hash.substr(1) === "" ? 1 : window.location.hash.substr(1);
   $("[data-content-id='" + content_id + "']").click();
 
   /*
