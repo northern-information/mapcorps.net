@@ -66,7 +66,7 @@ It may look like this:
  - **Green Cable:** clock buff mult to Teletype in #1.
  - **Grey Cable:** Teletype CV #1 output to filter frequency modulation input.
  - **Yellow Cable:** clock buff mult to envelope trigger input.
- - **Red Cable:** envelope ouput to filter input.
+ - **Red Cable:** envelope output to filter input.
  - **Blue Cable:** Filter output (here band pass) to audio interface.
 
 And it may sound like this:
