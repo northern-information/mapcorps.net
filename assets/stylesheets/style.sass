@@ -41,14 +41,39 @@ body
   color: $black
   font-family: $body
 
-h1, h2
+h1, h2, h3, h4, h5, h6
   font-family: $display
+  text-transform: uppercase
 
 a, a:link, a:active, a:visited
   color: $blue
+  text-decoration: underline
 
 a:hover
   @extend .global-warming
+
+p
+  font-size: 1rem
+
+p.drop-caps::first-letter
+  font-family: $display
+  color: $blue
+  float: left
+  font-size: 5rem
+  margin: 0 .1rem 0 0
+  line-height: 0.85
+
+blockquote
+  background: $grey
+  font-family: $display
+  padding: 10px 10px 10px 20px
+  border-left: 4px solid $red
+  p
+    font-size: 2rem
+
+audio
+  @extend .global-warming
+  padding: 5px
 
 a.log-nav
   color: $blue
@@ -62,6 +87,7 @@ a.log-nav.active
   color: $white
   background: $blue
 
+.home-content img,
 .log-content img
   width: 100%
   height: auto
@@ -70,12 +96,19 @@ a.log-nav.active
   &:hover
     @extend .global-warming
 
-code
+pre
   color: $white
   background: $blue
   display: block
   padding: 5px
   border-radius: 5px
+
+code
+  color: $white
+  background: $blue  
+  padding: 2px
+  border-radius: 5px
+  
 
 main
   h2
@@ -83,14 +116,29 @@ main
   hr
     border-top: 5px solid $green
 
+ol
+  padding: 0 0 0 1rem
+
+ol li
+  counter-increment: list
+  list-style-type: none
+  position: relative
+
+ol li:before
+  color: $red
+  content: counter(list)
+  position: absolute
+  font-weight: bold
+  width: 1rem
+  margin-left: -1rem
+
 ul
+  padding: 0 0 0 1rem
   list-style: none
-  margin: 0 0 1rem 1rem
-  padding: 0
 
 ul li::before
   content: "\002B"
-  color: $green
+  color: $red
   font-weight: bold
   display: inline-block
   width: 1rem

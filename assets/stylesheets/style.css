@@ -26,11 +26,35 @@ body {
   color: #111111;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
-h1, h2 {
-  font-family: "Michroma", sans-serif; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Michroma", sans-serif;
+  text-transform: uppercase; }
 
 a, a:link, a:active, a:visited {
-  color: #0000FF; }
+  color: #0000FF;
+  text-decoration: underline; }
+
+p {
+  font-size: 1rem; }
+
+p.drop-caps::first-letter {
+  font-family: "Michroma", sans-serif;
+  color: #0000FF;
+  float: left;
+  font-size: 5rem;
+  margin: 0 0.1rem 0 0;
+  line-height: 0.85; }
+
+blockquote {
+  background: #CCCCCC;
+  font-family: "Michroma", sans-serif;
+  padding: 10px 10px 10px 20px;
+  border-left: 4px solid #FF0000; }
+  blockquote p {
+    font-size: 2rem; }
+
+audio {
+  padding: 5px; }
 
 a.log-nav {
   color: #0000FF;
@@ -44,17 +68,24 @@ a.log-nav.active {
   color: #EEEEEE;
   background: #0000FF; }
 
+.home-content img,
 .log-content img {
   width: 100%;
   height: auto;
   border: 5px solid transparent;
   background: #0000FF; }
 
-code {
+pre {
   color: #EEEEEE;
   background: #0000FF;
   display: block;
   padding: 5px;
+  border-radius: 5px; }
+
+code {
+  color: #EEEEEE;
+  background: #0000FF;
+  padding: 2px;
   border-radius: 5px; }
 
 main h2 {
@@ -62,14 +93,29 @@ main h2 {
 main hr {
   border-top: 5px solid #00FF00; }
 
+ol {
+  padding: 0 0 0 1rem; }
+
+ol li {
+  counter-increment: list;
+  list-style-type: none;
+  position: relative; }
+
+ol li:before {
+  color: #FF0000;
+  content: counter(list);
+  position: absolute;
+  font-weight: bold;
+  width: 1rem;
+  margin-left: -1rem; }
+
 ul {
-  list-style: none;
-  margin: 0 0 1rem 1rem;
-  padding: 0; }
+  padding: 0 0 0 1rem;
+  list-style: none; }
 
 ul li::before {
   content: "+";
-  color: #00FF00;
+  color: #FF0000;
   font-weight: bold;
   display: inline-block;
   width: 1rem;
@@ -121,7 +167,8 @@ header .logo {
   margin: 10px;
   border: 4px solid #CCCCCC; }
 
-.global-warming, a:hover, .log-content img:hover, header a:hover, header .logo {
+.global-warming, a:hover, audio, .home-content img:hover,
+.log-content img:hover, header a:hover, header .logo {
   -webkit-animation: rgb-cycle 10s linear 0s infinite normal;
   -moz-animation: rgb-cycle 10s linear 0s infinite normal;
   -ms-animation: rgb-cycle 10s linear 0s infinite normal;

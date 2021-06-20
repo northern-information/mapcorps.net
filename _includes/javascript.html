@@ -1,5 +1,14 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
+{% if page.url == "/" %}
+<script>
+$(function() {
+  $(".home-content div").each(function() {
+    $(this).find("p").first().addClass("drop-caps");
+  });
+});
+</script>
+{% endif %}
 
 {% if page.title == "University" %}
 <script>
@@ -30,11 +39,11 @@ console.log(university);
  * Step 2: make the map.
  */
 function makeGrid(x, y) {
-  var out = '';
+  var out = "";
   for (var iy = y - 1; iy >= 0; iy--) {
-    var cells = '';
+    var cells = "";
     for (var ix = x - 1; ix >= 0; ix--) {
-      var className = 'x' + ix + 'y' + iy;
+      var className = "x" + ix + "y" + iy;
       cells += makeCell(className);
     }
     out += makeRow(cells);
@@ -43,15 +52,15 @@ function makeGrid(x, y) {
 }
 
 function makeRow(cells) {
-  return '<div class="longitude">' + cells + '</div>';
+  return '<div class="longitude">' + cells + "</div>";
 }
 
 function makeCell(className) {
   return '<div class="cell ' + className + '">.</div>';
 }
 
-if (document.getElementById('university')) {
-  document.getElementById('university').innerHTML = makeGrid(32, 16);
+if (document.getElementById("university")) {
+  document.getElementById("university").innerHTML = makeGrid(32, 16);
 }
 
 /*
@@ -68,26 +77,45 @@ if (document.getElementById('university')) {
 /*
  * Left content area. Sorry for the jQuery. ¯\_(ツ)_/¯
  */
+function show_content(content_id) {
+    $("a.log-nav").each(function() { $(this).removeClass("active"); });
+    $("a.log-nav[data-content-id='" + content_id + "']").addClass("active");
+    $(".log-content").each(function() { $(this).hide() });
+    $(".log-"+ content_id).show();
+}
+
 $(function() {
-  $('a.log-nav').click(function() {
-    var content_id = $(this).data("content-id")
-    $('a.log-nav').each(function() { $(this).removeClass("active"); });
-    $(this).addClass("active");
-    $('.log-content').each(function() { $(this).hide() });
-    $('.log-' + content_id).show();
+  // Log main navigation.
+  $("a.log-nav").click(function() {
+    show_content($(this).data("content-id"))
+  });
+
+  // Inline log navigation.
+  $("a").click(function() {
+    var content_id = $(this).attr("href").split("#")[1];
+    if (content_id != null) {
+      show_content(content_id);
+    }
   });
 
   // Set the initial log view based on the anchor in the URL.
-  var hash = window.location.hash.substr(1) == "" ? 1 : window.location.hash.substr(1);
-  $("[data-content-id='" + hash + "']").click();
+  var content_id = window.location.hash.substr(1) == "" ? 1 : window.location.hash.substr(1);
+  $("[data-content-id='" + content_id + "']").click();
 
   /*
    * Make all post images link to high res versions of themsleves.
    * The other options besides JS were to do it in markdown which is an awful author/writing
    * experience or extend Jekyll to do this during compilation. This is 3 lines.
    */
-  $('.log-content img').each(function() {
+  $(".log-content img").each(function() {
     $(this).wrap('<a href="' + this.src + '"></a>');
+  });
+
+  /*
+   * Make the first letter big.
+   */
+  $(".log-content").each(function() {
+    $(this).find("p").first().addClass("drop-caps");
   });
 
 });

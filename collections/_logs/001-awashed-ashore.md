@@ -1,6 +1,7 @@
 ---
 content_id: 1
 author: "Tyler"
+type: "Autofiction"
 ascii: "@"
 x: 10
 y: 20
@@ -9,11 +10,13 @@ attributes: ["hydrogen", "argon", "helium", "oxygen"]
 ---
 Awashed ashore this island of stability, I blinked in the iridium light. Our waterlogged map slowly curling in the dry heat, old scribblings of trigonometry fading.
 
-"It is done with a filter ping," Trent said, and summoned thunder in that cloudless sky.
+"It is done with a [filter ping](#4)," Trent said, and summoned thunder in that cloudless sky.
 
 ![Filter Ping](/assets/logs/filter-ping.jpg)
 
-Ryan was tracking at a different frame-rate than I, but that was precisely why we were a team. New paradigms require new tactics. And here, at the University of Maps, new paradigms abound. How many more still remained unwritten?
+Ryan was tracking at a different frame-rate than I, but that was precisely why we are a team. New paradigms require new tactics. And here, at the University of Maps, new paradigms abound. How many more still remained unwritten?
+
+> Indeed, time slippage is a phenomenon frequently encountered by synthesists, both within the machine and without.
 
 There were still many weeks ahead, but already it felt as though we had been on this journey for a millennium. And perhaps we had. Indeed, time slippage is a phenomenon frequently encountered by synthesists, both within the machine and without.
 
