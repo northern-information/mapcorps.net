@@ -1,4 +1,7 @@
 ---
+layout: post
+title: "Filter Ping"
+date: 2021-06-19
 content_id: 4
 author: "Tyler"
 type: "Praxis"
@@ -12,7 +15,7 @@ attributes: ["transistor", "filter"]
 
 This log describes how to create a percussive sound with an envelope and a filter. Any envelope and filter will do. You'll also need a way to trigger the envelope, along with a way to listen to the output of the filter.
 
-![Filter Ping IRL](/assets/logs/filter-ping-irl.jpg)
+![Filter Ping IRL](/assets/content/filter-ping-irl.jpg)
 
 ---
 
@@ -28,14 +31,14 @@ This log describes how to create a percussive sound with an envelope and a filte
 ### Filter Ping Example
 
 1. Set your envelope to a very short attack. Something between `0ms` and `10ms` should do. Set your decay and/or release (depending on your instrument) to have a smooth curve.
-![Filter Envelope IRL](/assets/logs/filter-ping-envelope.jpg)
+![Filter Envelope IRL](/assets/content/filter-ping-envelope.jpg)
 2. Route this envelope's output to the filter's input. (This may feel counter-intuitive as typical use of a filter has the synthesist routing audio-rate signals here.) Route the filter's output to your audio interface so you can hear it.
 3. Increase your filter's resonance to the maximum, then dial it back until *just after* it quiets down.
 4. Trigger the envelope.
 
 It may look like this:
 
-![Modular Example](/assets/logs/filter-ping-example.jpg)
+![Modular Example](/assets/content/filter-ping-example.jpg)
 
  - **Yellow Cable:** clock output (here randomized) to envelope trigger input.
  - **Red Cable:** envelope output to filter input.
@@ -43,7 +46,7 @@ It may look like this:
 
 And it may sound like this:
 
-<audio controls src="/assets/logs/filter-ping-example.mp3"></audio>
+<audio controls src="/assets/content/filter-ping-example.mp3"></audio>
 
 ---
 
@@ -60,7 +63,7 @@ Following the same concept as before, now add modulation. Here, we use a [Telety
 
 It may look like this:
 
-![Modular Advanced Example](/assets/logs/filter-ping-advanced-example.jpg)
+![Modular Advanced Example](/assets/content/filter-ping-advanced-example.jpg)
 
  - **White Cable:** clock output (here randomized) to buff mult.
  - **Green Cable:** clock buff mult to Teletype in #1.
@@ -71,7 +74,7 @@ It may look like this:
 
 And it may sound like this:
 
-<audio controls src="/assets/logs/filter-ping-advanced-example.mp3"></audio>
+<audio controls src="/assets/content/filter-ping-advanced-example.mp3"></audio>
 
 ---
 

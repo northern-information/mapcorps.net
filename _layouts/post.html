@@ -1,8 +1,32 @@
 ---
 layout: default
 ---
-{%- if page.title -%}
-<h1>{{ page.title | escape }}</h1>
-{%- endif -%}
+<div class="container-fluid no-padding">
+  <div class="row">
+    <div class="col">
+      <h2>{{ page.title }}</h2>
+      <hr>
+      <div class="post-content post-{{ page.content_id }}">
 
-{{ content }}
+<pre class="my-3">
+page.layout: {{ page.layout }}
+page.title: {{ page.title }}
+page.date: {{ page.date }}
+page.url: {{ page.url }}
+page.content_id: {{ page.content_id }}
+page.author: {{ page.author }}
+page.type: {{ page.type }}
+page.ascii: {{ page.ascii }}
+page.x: {{ page.x }}
+page.y: {{ page.y }}
+page.class: {{ page.class }}
+page.attributes: {{ page.attributes | join: ", " }}
+</pre>
+
+          {{ content }}
+          <hr>
+        </div>
+    </ul>
+    </div>
+  </div>
+</div>

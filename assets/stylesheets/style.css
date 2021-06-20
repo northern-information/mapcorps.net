@@ -58,20 +58,20 @@ audio {
   padding: 0 0 20px 0;
   border: 5px solid transparent; }
 
-a.log-nav {
+a.post-nav {
   color: #0000FF;
   cursor: pointer;
   padding: 50px 5px 0 5px;
   display: inline-block;
   background: #CCCCCC; }
 
-a.log-nav:hover,
-a.log-nav.active {
+a.post-nav:hover,
+a.post-nav.active {
   color: #EEEEEE;
   background: #0000FF; }
 
 .home-content img,
-.log-content img {
+.post-content img {
   width: 100%;
   height: auto;
   border: 5px solid transparent;
@@ -170,7 +170,7 @@ header .logo {
   border: 4px solid #CCCCCC; }
 
 .global-warming, a:hover, audio, .home-content img:hover,
-.log-content img:hover, header a:hover, header .logo {
+.post-content img:hover, header a:hover, header .logo {
   -webkit-animation: rgb-cycle 10s linear 0s infinite normal;
   -moz-animation: rgb-cycle 10s linear 0s infinite normal;
   -ms-animation: rgb-cycle 10s linear 0s infinite normal;

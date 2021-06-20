@@ -1,4 +1,7 @@
 ---
+layout: post
+title: "We Spend So Long"
+date: 2021-06-19
 content_id: 3
 author: "Trent"
 type: "Autofiction"

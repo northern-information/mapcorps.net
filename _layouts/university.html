@@ -4,27 +4,31 @@ layout: default
 <div class="container-fluid no-padding">
   <div class="row">
     <div class="col-md-6 col-sm-12">
-      <h2>LOGS</h2>
-      {% assign logs = site.logs %}
-      {% for log in site.logs %}
-        <a href="#{{ log.content_id }}" class="log-nav" data-content-id="{{ log.content_id }}">{{ log.content_id }}</a>
+      <h2>UNIVERSITY POSTS</h2>
+      {% assign posts = site.posts | sort: "content_id" %}
+      {% for post in posts%}
+        <a href="#{{ post.content_id }}" class="post-nav" data-content-id="{{ post.content_id }}">{{ post.content_id }}</a>
       {% endfor %}
       <hr>
-      {% for log in site.logs %}
-        <div class="log-content log-{{ log.content_id }}" style="display: none;">
+      {% for post in posts %}
+        <div class="post-content post-{{ post.content_id }}" style="display: none;">
 
 <pre class="my-3">
-log.content_id: {{ log.content_id }}
-log.author: {{ log.author }}
-log.type: {{ log.type }}
-log.ascii: {{ log.ascii }}
-log.x: {{ log.x }}
-log.y: {{ log.y }}
-log.class: {{ log.class }}
-log.attributes: {{ log.attributes | join: ", " }}
+post.layout: {{ post.layout }}
+post.title: {{ post.title }}
+post.date: {{ post.date }}
+post.url (permalink): {{ post.url }}
+post.content_id: {{ post.content_id }}
+post.author: {{ post.author }}
+post.type: {{ post.type }}
+post.ascii: {{ post.ascii }}
+post.x: {{ post.x }}
+post.y: {{ post.y }}
+post.class: {{ post.class }}
+post.attributes: {{ post.attributes | join: ", " }}
 </pre>
 
-          {{ log.content | markdownify }}
+          {{ post.content | markdownify }}
           <hr>
         </div>
       {% endfor %}

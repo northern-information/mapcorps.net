@@ -14,26 +14,28 @@ $(function() {
 <script>
 
 /*
- * Step 1: build our data structure out from collections/_logs/*.md so JS can access.
+ * Step 1: build our data structure out from collections/_posts/*.md so JS can access.
  */
-var university = [];
-{% assign logs = site.logs | sort: "id" %}
-{% for log in logs %}
-  var o_{{ log.content_id }} = {};
-  o_{{ log.content_id }}["content_id"] = {{ log.content_id }};
-  o_{{ log.content_id }}["author"] = "{{ log.author }}";
-  o_{{ log.content_id }}["ascii"] = "{{ log.ascii }}";
-  o_{{ log.content_id }}["x"] = {{ log.x }};
-  o_{{ log.content_id }}["y"] = {{ log.y }};
-  o_{{ log.content_id }}["class"] = "{{ log.class }}";
-  var a = [];
-  {% for attribute in log.attributes %}
-    a.push("{{ attribute }}");
+var posts = [];
+{% for post in site.posts | sort: "content_id" %}
+  var post_{{ post.content_id }} = {};
+  post_{{ post.content_id }}["date"] = "{{ post.date }}";
+  post_{{ post.content_id }}["layout"] = "{{ post.layout }}";
+  post_{{ post.content_id }}["url"] = "{{ post.url }}";
+  post_{{ post.content_id }}["content_id"] = {{ post.content_id }};
+  post_{{ post.content_id }}["author"] = "{{ post.author }}";
+  post_{{ post.content_id }}["ascii"] = "{{ post.ascii }}";
+  post_{{ post.content_id }}["x"] = {{ post.x }};
+  post_{{ post.content_id }}["y"] = {{ post.y }};
+  post_{{ post.content_id }}["class"] = "{{ post.class }}";
+  var attrs = [];
+  {% for attribute in post.attributes %}
+    attrs.push("{{ attribute }}");
   {% endfor %}
-  university.push(o_{{ log.content_id }});
+  posts.push(post_{{ post.content_id }});
 {% endfor %}
 
-console.log(university);
+console.log(posts);
 
 /*
  * Step 2: make the map.
@@ -60,7 +62,7 @@ function makeCell(className) {
 }
 
 if (document.getElementById("university")) {
-  document.getElementById("university").innerHTML = makeGrid(32, 16);
+  document.getElementById("university").innerHTML = makeGrid(30, 6);
 }
 
 /*
@@ -78,19 +80,19 @@ if (document.getElementById("university")) {
  * Left content area. Sorry for the jQuery. ¯\_(ツ)_/¯
  */
 function show_content(content_id) {
-    $("a.log-nav").each(function() { $(this).removeClass("active"); });
-    $("a.log-nav[data-content-id='" + content_id + "']").addClass("active");
-    $(".log-content").each(function() { $(this).hide() });
-    $(".log-"+ content_id).show();
+    $("a.post-nav").each(function() { $(this).removeClass("active"); });
+    $("a.post-nav[data-content-id='" + content_id + "']").addClass("active");
+    $(".post-content").each(function() { $(this).hide() });
+    $(".post-"+ content_id).show();
 }
 
 $(function() {
-  // Log main navigation.
-  $("a.log-nav").click(function() {
+  // Posts main navigation.
+  $("a.post-nav").click(function() {
     show_content($(this).data("content-id"))
   });
 
-  // Inline log navigation.
+  // Inline post navigation.
   $("a").click(function() {
     var content_id = $(this).attr("href").split("#")[1];
     if (content_id != null) {
@@ -98,7 +100,7 @@ $(function() {
     }
   });
 
-  // Set the initial log view based on the anchor in the URL.
+  // Set the initial post view based on the anchor in the URL.
   var content_id = window.location.hash.substr(1) == "" ? 1 : window.location.hash.substr(1);
   $("[data-content-id='" + content_id + "']").click();
 
@@ -107,14 +109,14 @@ $(function() {
    * The other options besides JS were to do it in markdown which is an awful author/writing
    * experience or extend Jekyll to do this during compilation. This is 3 lines.
    */
-  $(".log-content img").each(function() {
+  $(".post-content img").each(function() {
     $(this).wrap('<a href="' + this.src + '"></a>');
   });
 
   /*
    * Make the first letter big.
    */
-  $(".log-content").each(function() {
+  $(".post-content").each(function() {
     $(this).find("p").first().addClass("drop-caps");
   });
 

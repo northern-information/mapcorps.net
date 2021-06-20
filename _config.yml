@@ -13,4 +13,3 @@ include: ['_pages']
 collections_dir: collections
 collections:
   - examples
-  - logs

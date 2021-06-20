@@ -1,4 +1,7 @@
 ---
+layout: post
+title: "Awashed Ashore"
+date: 2021-06-19
 content_id: 1
 author: "Tyler"
 type: "Autofiction"
@@ -12,7 +15,7 @@ Awashed ashore this island of stability, I blinked in the iridium light. Our wat
 
 "It is done with a [filter ping](#4)," Trent said, and summoned thunder in that cloudless sky.
 
-![Filter Ping](/assets/logs/filter-ping.jpg)
+![Filter Ping](/assets/content/filter-ping.jpg)
 
 Ryan was tracking at a different frame-rate than I, but that was precisely why we are a team. New paradigms require new tactics. And here, at the University of Maps, new paradigms abound. How many more still remained unwritten?
 
