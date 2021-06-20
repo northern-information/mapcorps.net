@@ -120,7 +120,7 @@ This sounds much different from the previous two but is another example of a str
   // variables
   var trig, reverb, maxTime;
 
-  // rhythm: 8th notes @ 120bpm
+  // rhythm: once every four seconds
   trig = Impulse.kr(1/4);
 
   // maxTime: sampled on each strike
