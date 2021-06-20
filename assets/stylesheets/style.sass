@@ -20,11 +20,12 @@ $body: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New"
   height: 20px
 
 .cell 
-  line-height: 0px
-  width: 20px
-  height: 20px
   margin: 0
-  padding: 0
+  float: left
+  line-height: 23px
+  width: 14px
+  height: 22px
+  padding: 1px 2px
   float: left
 
 // global
@@ -197,6 +198,18 @@ header
     border: 4px solid $grey
     @extend .global-warming
 
+.dormant-island
+  color: $white
+  background-color: $black
+  
+.island
+  color: $white
+  @extend .global-warming
+
+.present-island
+  color: $white
+  @extend .global-warming-120
+
 // animations
 
 .global-warming
@@ -204,6 +217,12 @@ header
   -moz-animation: rgb-cycle 10s linear 0s infinite normal
   -ms-animation: rgb-cycle 10s linear 0s infinite normal
   animation: rgb-cycle 10s linear 0s infinite normal
+
+.global-warming-120
+  -webkit-animation: rgb-cycle-120 10s linear 0s infinite normal
+  -moz-animation: rgb-cycle-120 10s linear 0s infinite normal
+  -ms-animation: rgb-cycle-120 10s linear 0s infinite normal
+  animation: rgb-cycle-120 10s linear 0s infinite normal
 
 @-webkit-keyframes rgb-cycle
   0%
@@ -224,3 +243,24 @@ header
     background-color: $blue
   100%
     background-color: $red
+
+@-webkit-keyframes rgb-cycle-120
+  0%
+    background-color: $green
+  33%
+    background-color: $blue
+  66%
+    background-color: $red
+  100%
+    background-color: $green
+
+@keyframes rgb-cycle-180
+  0%
+    background-color: $green
+  33%
+    background-color: $blue
+  66%
+    background-color: $red
+  100%
+    background-color: $green
+    
