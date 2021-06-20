@@ -62,6 +62,7 @@ Here is an example in SuperCollider of a [pinged filter](#4) alongside a simple 
   LeakDC.ar(bpf + comb) ! 2
 }.scope);
 ```
+<audio controls src="/assets/content/sc-pings-1.mp3"></audio>
 
 
 ## SuperCollider Example Two: Geometric Ripples
@@ -107,6 +108,7 @@ This example uses the same filter types, but there are some important difference
   LeakDC.ar(comb).tanh ! 2
 }.scope);
 ```
+<audio controls src="/assets/content/sc-pings-2.mp3"></audio>
 
 ## SuperCollider Example Three: Simple Allpass Reverb
 This example is quite a bit different from the other two. Now, the tuning is completely random, and instead of a bandpass or comb filter, we have 10 allpass filters. This creates a primitive reverb. As in the first example, the mouse X axis controls the audio - this time, it is the maximum length of the allpass delay, as sampled each strike.
@@ -147,6 +149,7 @@ This sounds much different from the previous two but is another example of a str
   (reverb + trig).tanh;
 }.scope);
 ```
+<audio controls src="/assets/content/sc-pings-3.mp3"></audio>
 
 ## Observations
 * How do the filters' timbre differ?
