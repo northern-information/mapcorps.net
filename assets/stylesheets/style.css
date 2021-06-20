@@ -54,7 +54,9 @@ blockquote {
     font-size: 2rem; }
 
 audio {
-  padding: 5px; }
+  margin: 0;
+  padding: 0;
+  border: 5px solid transparent; }
 
 a.log-nav {
   color: #0000FF;
