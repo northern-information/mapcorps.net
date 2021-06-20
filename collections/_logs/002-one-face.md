@@ -34,7 +34,7 @@ The bass drum and toms are from sister bands. [A friendly blade excites them wit
 
 Trent describes recent live codings: triggering "longer samples" as opposed to one-shots,
 
-> Ryan silently wonders: are these like loops, maybe slices? Does a network of hidden parameters depend on when triggers arise? Is this sequencing sequences? sequencing sequencers?
+> Ryan silently wonders: are these like loops, maybe slices? Does a network of hidden parameters depend on when triggers arise? Is this sequencing sequences? Sequencing sequencers?
 
 Now we see the field, a geometric playground of aluminum, punctuated by inlets, outlets, corpora parametric. A golf course for tiny aliens.
 

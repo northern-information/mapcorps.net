@@ -67,4 +67,4 @@ It may sound like this:
 
 ### Conclusion
 
-Generating percussive sounds with filter pinging ruptures and problematizes our usual relationship with filters. Filters are tools of subtraction. With this simple electrical "hack" the syntheist instead gives voice to the silencer.
+Generating percussive sounds with filter pinging ruptures and problematizes our usual relationship with filters. Filters are tools of subtraction. With this simple electrical "hack" the synthesist instead gives voice to the silencer.
