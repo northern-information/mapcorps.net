@@ -18,4 +18,4 @@ The [filter ping](#4) felt like an ideal entry to this way of thinking. Classica
 
 Operating at the edge of stability is where our artistic mind travels - the desire to be on that precipice & explore what comes from the fear & adrenaline & uncertainty. We do it in ourselves, and in our performances, but we also push our instruments there too – the filter right at the point where it's more than just a spectral-subtractor, but less than a droning oscillator.
 
-This is a place worth fighting for - the chaotic transition between two states. requiring both great control & precision to maintain one's footing, while being a place where ambiguity is the only constant.
+This is a place worth fighting for - the chaotic transition between two states. Requiring both great control & precision to maintain one's footing, while being a place where ambiguity is the only constant.

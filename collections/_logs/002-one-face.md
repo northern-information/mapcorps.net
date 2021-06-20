@@ -18,7 +18,7 @@ Verbal handshake, clock synchronization, report of specific musical queries:
 - Tyler, maintain the emotional urgency of the edge.
 - Trent, find the pattern and fun in the intuition.
 
-These thoughts give us energy: Live coding as a concept, playing on the edge of our ability, creating and sharing a good time, portable systems and concepts, knowing just enough.
+These thoughts give us energy: live coding as a concept, playing on the edge of our ability, creating and sharing a good time, portable systems and concepts, knowing just enough.
 
 We relish the homework.
 
@@ -32,11 +32,11 @@ Trent describes the ensemble:
 
 The bass drum and toms are from sister bands. [A friendly blade excites them with just one softened corner. We watch one sister imprint her ripple on this excitation. This ripple changes shape, fades in proportion to the excitation.](#4)
 
-Trent describes recent live codings: triggering "longer samples" as opposed to one-shots,
+Trent describes recent live codings: triggering "longer samples" as opposed to one-shots...
 
 > Ryan silently wonders: are these like loops, maybe slices? Does a network of hidden parameters depend on when triggers arise? Is this sequencing sequences? Sequencing sequencers?
 
-Now we see the field, a geometric playground of aluminum, punctuated by inlets, outlets, corpora parametric. A golf course for tiny aliens.
+... Now we see the field, a geometric playground of aluminum, punctuated by inlets, outlets, corpora parametric. A golf course for tiny aliens.
 
 On this field lives the snare. We listen to a pinkened transistor avalanche, through a gate,
 As relayed by a different trio of sister filters. These sisters are attracted and repelled in equidistance, as semaphored by another curve.
