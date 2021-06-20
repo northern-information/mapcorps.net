@@ -16,25 +16,20 @@ $(function() {
 /*
  * Step 1: build our data structure out from collections/_posts/*.md so JS can access.
  */
-var posts = [];
+const  posts = [
 {% for post in site.posts | sort: "content_id" %}
-  var post_{{ post.content_id }} = {};
-  post_{{ post.content_id }}["date"] = "{{ post.date }}";
-  post_{{ post.content_id }}["layout"] = "{{ post.layout }}";
-  post_{{ post.content_id }}["url"] = "{{ post.url }}";
-  post_{{ post.content_id }}["content_id"] = {{ post.content_id }};
-  post_{{ post.content_id }}["author"] = "{{ post.author }}";
-  post_{{ post.content_id }}["ascii"] = "{{ post.ascii }}";
-  post_{{ post.content_id }}["x"] = {{ post.x }};
-  post_{{ post.content_id }}["y"] = {{ post.y }};
-  post_{{ post.content_id }}["class"] = "{{ post.class }}";
-  var attr = [];
-  {% for attribute in post.attributes %}
-    attr.push("{{ attribute }}");
-  {% endfor %}
-  post_{{ post.content_id }}["attr"] = attr;
-  posts.push(post_{{ post.content_id }});
+  {
+    "layout": "{{ post.layout }}",
+    "url": "{{ post.url }}",
+    "content_id": {{ post.content_id }},
+    "author": "{{ post.author }}",
+    "ascii": "{{ post.ascii }}",
+    "x": {{ post.x }},
+    "y": {{ post.y }},
+    "class": "{{ post.class }}",
+  },
 {% endfor %}
+];
 
 console.log(posts);
 
@@ -87,12 +82,8 @@ function show_content(content_id) {
   $(".post-"+ content_id).show();
 }
 
-function isLocal(url) {
-  /*
-  - get host of url + current location
-  - check if same
-  - then we can do clicky things
-  */
+function isUniversity(a) {
+  return a.origin === window.location.origin;
 }
 
 $(function() {
@@ -103,9 +94,10 @@ $(function() {
 
   // Inline post navigation.
 
-  $("a").click(function() {
-    ///debugger;
-    var content_id = $(this).attr("href").split("#")[1];
+  $("a").click(function(el, evt) {
+    if (!isUniversity(this)) return;
+
+    const [_, content_id] = $(this).attr("href").split("#");
     if (content_id != null) {
       show_content(content_id);
     }
@@ -113,7 +105,8 @@ $(function() {
 
   // Set the initial log view based on the anchor in the URL.
   var content_id = window.location.hash.substr(1) === "" ? 1 : window.location.hash.substr(1);
-  $("[data-content-id='" + content_id + "']").click();
+  // $("[data-content-id='" + content_id + "']").click();
+  content_id && setTimeout(show_content, 0, content_id);
 
   /*
    * Make all post images link to high res versions of themsleves.
