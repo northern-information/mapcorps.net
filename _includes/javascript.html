@@ -12,11 +12,12 @@ $(function() {
 
 {% if page.title == "University" %}
 <script>
+  const gridClass = (x,y) => `x${x}y${y}`;
 
 /*
  * Step 1: build our data structure out from collections/_posts/*.md so JS can access.
  */
-const  posts = [
+const posts = [
 {% for post in site.posts | sort: "content_id" %}
   {
     "layout": "{{ post.layout }}",
@@ -41,7 +42,7 @@ function makeGrid(x, y) {
   for (var iy = y - 1; iy >= 0; iy--) {
     var cells = "";
     for (var ix = x - 1; ix >= 0; ix--) {
-      var className = "x" + ix + "y" + iy;
+      const className = gridClass(ix, iy);
       cells += makeCell(className);
     }
     out += makeRow(cells);
@@ -76,10 +77,36 @@ if (document.getElementById("university")) {
  * Left content area. Sorry for the jQuery. ¯\_(ツ)_/¯
  */
 function show_content(content_id) {
-  $("a.post-nav").each(function() { $(this).removeClass("active"); });
+  $("a.post-nav.active").removeClass("active");
   $("a.post-nav[data-content-id='" + content_id + "']").addClass("active");
-  $(".post-content").each(function() { $(this).hide() });
+  $(".post-content").hide();
   $(".post-"+ content_id).show();
+  redrawMap(content_id);
+}
+
+function redrawMap(content_id) {
+  const cells = $(".cell");
+  // debugger;
+  cells.removeClass("island present-island");
+  // $(".present-island").removeClass("present-island");
+  posts.forEach((post) => {
+    const cn = gridClass(post.x, post.y);
+    const cell = document.querySelector(`.${cn}`);
+    if (cell) {
+      // not a strict compare because they might be number or string
+      const islandClass = post.content_id == content_id ? 
+        "present-island" : "island";
+      cell.innerHTML = post.ascii;
+      $(cell).addClass("dormant-island")
+      setTimeout(() => {
+        $(cell).addClass(islandClass);
+        $(cell).removeClass("dormant-island")
+      });
+    } else {
+      console.warn(`${cn} is OFF THE MAP`);
+      return;
+    }
+  });
 }
 
 function isUniversity(a) {
