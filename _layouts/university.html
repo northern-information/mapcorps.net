@@ -3,7 +3,18 @@ layout: default
 ---
 <div class="container-fluid no-padding">
   <div class="row">
-    <div class="col-md-6 col-sm-12">
+    <div class="col-md-2 col-sm-12">
+      <h2>MAP</h2>
+      <div id="map-outer">
+        <div id="map-middle">
+          <div id="map-inner"></div>
+        </div>
+        <br>
+        <p>Under Construction</p>
+      </div>
+      <hr>
+    </div>
+    <div class="col-md-10 col-sm-12">
       <h2>UNIVERSITY POSTS</h2>
       {% assign posts = site.posts | sort: "content_id" %}
       {% for post in posts%}
@@ -33,10 +44,6 @@ post.attributes: {{ post.attributes | join: ", " }}
         </div>
       {% endfor %}
     </ul>
-    </div>
-    <div class="col-md-6 col-sm-12">
-      <h2>INTERACTIVE MAP UNDER CONSTRUCTION...</h2>
-      <div id="university"></div>
     </div>
   </div>
 </div>

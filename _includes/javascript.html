@@ -58,15 +58,15 @@ function makeCell(className) {
   return '<div class="cell ' + className + '">.</div>';
 }
 
-if (document.getElementById("university")) {
-  document.getElementById("university").innerHTML = makeGrid(30, 6);
+if (document.getElementById("map-inner")) {
+  document.getElementById("map-inner").innerHTML = makeGrid(6, 30);
 }
 
 /*
  * Step 3: profit.
  */
 
-// loop through university
+// loop through posts
 // get x and y
 // inject ascii character
 // inject css class

@@ -158,5 +158,3 @@ This sounds much different from the previous two but is another example of a str
 * How does their behavior change based on frequency?
 * How does seeing or hiding the scope feel different?
 * What other configurations come to mind?
-
----
