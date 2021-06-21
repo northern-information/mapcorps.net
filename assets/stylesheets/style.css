@@ -19,6 +19,10 @@
 .longitude {
   height: 20px;
   width: 600px; }
+  .longitude a, .longitude a:link, .longitude a:active, .longitude a:visited {
+    color: #EEEEEE;
+    font-weight: bold;
+    text-decoration: none; }
 
 .cell {
   color: #CCCCCC;
@@ -109,6 +113,8 @@ pre {
   display: block;
   padding: 5px;
   border-radius: 5px; }
+  pre a, pre a:link, pre a:active, pre a:visited {
+    color: #EEEEEE; }
 
 code {
   color: #EEEEEE;
