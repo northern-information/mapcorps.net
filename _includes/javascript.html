@@ -14,6 +14,15 @@ $(function() {
 <script>
   const gridClass = (x,y) => `x${x}y${y}`;
 
+  function linkClickHandler() {
+    if (!isUniversity(this)) return;
+
+    const [_, content_id] = $(this).attr("href").split("#");
+    if (content_id != null) {
+      show_content(content_id);
+    }
+  }
+
 /*
  * Step 1: build our data structure out from collections/_posts/*.md so JS can access.
  */
@@ -66,11 +75,11 @@ if (document.getElementById("map-inner")) {
  * Step 3: profit.
  */
 
-// loop through posts
-// get x and y
-// inject ascii character
-// inject css class
-// simulate clicks $("[data-content-id='" + content_id + "']").click();
+// [x] loop through posts
+// [x] get x and y
+// [x] inject ascii character
+// [?] inject css class
+// [?] simulate clicks $("[data-content-id='" + content_id + "']").click();
 
 
 /*
@@ -86,21 +95,18 @@ function show_content(content_id) {
 
 function redrawMap(content_id) {
   const cells = $(".cell");
-  // debugger;
-  cells.removeClass("island present-island");
-  // $(".present-island").removeClass("present-island");
   posts.forEach((post) => {
     const cn = gridClass(post.x, post.y);
-    const cell = document.querySelector(`.${cn}`);
+    let cell = document.querySelector(`.${cn}`);
     if (cell) {
       // not a strict compare because they might be number or string
       const islandClass = post.content_id == content_id ? 
         "present-island" : "island";
-      cell.innerHTML = post.ascii;
-      $(cell).addClass("dormant-island")
+      cell.outerHTML = `<a class="cell ${cn} dormant-island" href="#${post.content_id}">${post.ascii}</div>`;
+      cell = document.querySelector(`.${cn}`);
+      $(cell).addClass("dormant-island").click(linkClickHandler);
       setTimeout(() => {
-        $(cell).addClass(islandClass);
-        $(cell).removeClass("dormant-island")
+        $(cell).addClass(islandClass).removeClass("dormant-island");
       });
     } else {
       console.warn(`${cn} is OFF THE MAP`);
@@ -121,18 +127,10 @@ $(function() {
 
   // Inline post navigation.
 
-  $("a").click(function(el, evt) {
-    if (!isUniversity(this)) return;
-
-    const [_, content_id] = $(this).attr("href").split("#");
-    if (content_id != null) {
-      show_content(content_id);
-    }
-  });
+  $("a").click(linkClickHandler);
 
   // Set the initial log view based on the anchor in the URL.
   var content_id = window.location.hash.substr(1) === "" ? 1 : window.location.hash.substr(1);
-  // $("[data-content-id='" + content_id + "']").click();
   content_id && setTimeout(show_content, 0, content_id);
 
   /*
