@@ -11,8 +11,6 @@ y: 2
 class: red
 attributes: ["filter", "resonance", "comb", "karplus-strong"]
 ---
-# Splash
-
 Pinging resonant bandpass, low pass, or high pass filters creates a sine-like ringing as the filter sculpts an incoming peak into its native rippling, just as the surface of a pond does to sudden interruption by a rock. The relationship of a quick strike agitating a vibrating, ringing body can be found in abundance elsewhere in the physical and sonic universe.
 
 ## SuperCollider Example One: Two sides of a coin
