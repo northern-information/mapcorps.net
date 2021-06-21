@@ -6,8 +6,8 @@ content_id: 4
 author: "Tyler"
 type: "Praxis"
 ascii: "!"
-x: 1
-y: 1
+x: 5
+y: 29
 class: red
 attributes: ["transistor", "filter"]
 ---

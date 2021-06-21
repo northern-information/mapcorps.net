@@ -5,9 +5,9 @@ date: 2021-06-19
 content_id: 3
 author: "Trent"
 type: "Autofiction"
-ascii: "$"
-x: 20
-y: 53
+ascii: "%"
+x: 3
+y: 13
 class: red
 attributes: ["iridium", "neptunium"]
 ---

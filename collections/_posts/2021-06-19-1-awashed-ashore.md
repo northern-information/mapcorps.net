@@ -6,8 +6,8 @@ content_id: 1
 author: "Tyler"
 type: "Autofiction"
 ascii: "@"
-x: 10
-y: 20
+x: 2
+y: 29
 class: green
 attributes: ["hydrogen", "argon", "helium", "oxygen"]
 ---
