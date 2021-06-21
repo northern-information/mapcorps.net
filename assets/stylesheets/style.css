@@ -7,11 +7,12 @@
   height: 20px; }
 
 .cell {
-  line-height: 0px;
-  width: 20px;
-  height: 20px;
   margin: 0;
-  padding: 0;
+  float: left;
+  line-height: 23px;
+  width: 14px;
+  height: 22px;
+  padding: 1px 2px;
   float: left; }
 
 ::selection {
@@ -169,12 +170,28 @@ header .logo {
   margin: 10px;
   border: 4px solid #CCCCCC; }
 
+.dormant-island {
+  color: #EEEEEE;
+  background-color: #111111; }
+
+.island {
+  color: #EEEEEE; }
+
+.present-island {
+  color: #EEEEEE; }
+
 .global-warming, a:hover, audio, .home-content img:hover,
-.post-content img:hover, header a:hover, header .logo {
+.post-content img:hover, header a:hover, header .logo, .island {
   -webkit-animation: rgb-cycle 10s linear 0s infinite normal;
   -moz-animation: rgb-cycle 10s linear 0s infinite normal;
   -ms-animation: rgb-cycle 10s linear 0s infinite normal;
   animation: rgb-cycle 10s linear 0s infinite normal; }
+
+.global-warming-120, .present-island {
+  -webkit-animation: rgb-cycle-120 10s linear 0s infinite normal;
+  -moz-animation: rgb-cycle-120 10s linear 0s infinite normal;
+  -ms-animation: rgb-cycle-120 10s linear 0s infinite normal;
+  animation: rgb-cycle-120 10s linear 0s infinite normal; }
 
 @-webkit-keyframes rgb-cycle {
   0% {
@@ -194,5 +211,23 @@ header .logo {
     background-color: #0000FF; }
   100% {
     background-color: #FF0000; } }
+@-webkit-keyframes rgb-cycle-120 {
+  0% {
+    background-color: #00FF00; }
+  33% {
+    background-color: #0000FF; }
+  66% {
+    background-color: #FF0000; }
+  100% {
+    background-color: #00FF00; } }
+@keyframes rgb-cycle-180 {
+  0% {
+    background-color: #00FF00; }
+  33% {
+    background-color: #0000FF; }
+  66% {
+    background-color: #FF0000; }
+  100% {
+    background-color: #00FF00; } }
 
 /*# sourceMappingURL=style.css.map */
