@@ -12,7 +12,7 @@ class: red
 attributes: ["ennui", "anthropocene", "fire", "singularity"]
 ---
 
-Formaldehyde, Finnegan, fermium, fen.  I'm trying to apply what I've learned of from studying the floating islands all around me in the Great Pacific Garbage Patch. Unlike the sonderous eddies in the Sargasso Sea, this place is undulating and uneasy. My compass spins north, but then ticks counterclockwise with each heartbeat of everyone I love.
+Formaldehyde, Finnegan, fermium, fen.  I'm trying to apply what I've learned from studying the floating islands all around me in the Great Pacific Garbage Patch. Unlike the sonderous eddies in the Sargasso Sea, this place is undulating and uneasy. My compass spins north, but then ticks counterclockwise with each heartbeat of everyone I love.
 
 <audio controls src="/assets/content/we-are-the-singularity.mp3"></audio>
 
