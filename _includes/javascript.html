@@ -52,7 +52,7 @@ function makeGrid(x, y) {
     var cells = "";
     for (var ix = x - 1; ix >= 0; ix--) {
       const className = gridClass(ix, iy);
-      cells += makeCell(className);
+      cells += makeCell(ix, iy, className);
     }
     out += makeRow(cells);
   }
@@ -63,8 +63,8 @@ function makeRow(cells) {
   return '<div class="longitude">' + cells + "</div>";
 }
 
-function makeCell(className) {
-  return '<div class="cell ' + className + '">.</div>';
+function makeCell(x, y, className) {
+  return '<div class="cell '+ className + '" data-cell-x="' + x + '" data-cell-y="' + y + '">.</div>';
 }
 
 if (document.getElementById("map-inner")) {
@@ -102,7 +102,7 @@ function redrawMap(content_id) {
       // not a strict compare because they might be number or string
       const islandClass = post.content_id == content_id ? 
         "present-island" : "island";
-      cell.outerHTML = `<a class="cell ${cn} dormant-island" href="#${post.content_id}">${post.ascii}</div>`;
+      cell.outerHTML = `<a class="cell ${cn} dormant-island" href="#${post.content_id}" data-cell-x="${post.x}" data-cell-y="${post.y}">${post.ascii}</div>`;
       cell = document.querySelector(`.${cn}`);
       $(cell).addClass("dormant-island").click(linkClickHandler);
       setTimeout(() => {
@@ -120,16 +120,21 @@ function isUniversity(a) {
 }
 
 $(function() {
-  // Posts main navigation.
+ /*
+  * Posts main navigation.
+  */
   $("a.post-nav").click(function() {
     show_content($(this).data("content-id"))
   });
 
-  // Inline post navigation.
-
+ /*
+  * Inline post navigation.
+  */
   $("a").click(linkClickHandler);
 
-  // Set the initial log view based on the anchor in the URL.
+  /*
+   * Set the initial log view based on the anchor in the URL.
+   */
   var content_id = window.location.hash.substr(1) === "" ? 1 : window.location.hash.substr(1);
   content_id && setTimeout(show_content, 0, content_id);
 
@@ -148,6 +153,20 @@ $(function() {
   $(".post-content").each(function() {
     $(this).find("p").first().addClass("drop-caps");
   });
+
+  /*
+   * Highlight x and y in the map on hover.
+   */
+  $(".cell").hover(
+    function() {
+      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").addClass("highlight");
+      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").addClass("highlight");
+    },
+    function() {
+      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").removeClass("highlight");
+      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").removeClass("highlight");
+    }
+  );
 
 });
 
