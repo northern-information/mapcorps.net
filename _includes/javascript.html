@@ -159,12 +159,12 @@ $(function() {
    */
   $(".cell").hover(
     function() {
-      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").addClass("highlight");
-      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").addClass("highlight");
+      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").addClass("highlight-cell");
+      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").addClass("highlight-cell");
     },
     function() {
-      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").removeClass("highlight");
-      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").removeClass("highlight");
+      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").removeClass("highlight-cell");
+      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").removeClass("highlight-cell");
     }
   );
 

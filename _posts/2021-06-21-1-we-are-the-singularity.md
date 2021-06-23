@@ -22,7 +22,7 @@ Do you remember the hole in the ozone layer?
 
 ![Brighton West Pier](/assets/content/we-are-the-singularity.jpg)
 
-I do. It was in the [Weekly Reader](https://en.wikipedia.org/wiki/Weekly_Reader) circa 1995. I can still see the cover - a blood red blister of a sun, smoldering on a horizon. Perhaps above oil rigs. [But perhaps I implanted those arachnids later.](https://www.jacobinmag.com/2021/01/laleh-khalili-book-review-sinews-war-trade-shipping) This image of the [West Pier](https://en.wikipedia.org/wiki/West_Pier) will have to suffice as a stand in. Forgive me. It was hard to hold onto the facts when I was seven.
+I do. It was in the [Weekly Reader](https://en.wikipedia.org/wiki/Weekly_Reader) circa 1995. I can still see the cover - a blood red blister of a sun, smoldering on a horizon. Perhaps above oil rigs. [But perhaps I implanted those arachnids later.](https://www.jacobinmag.com/2021/01/laleh-khalili-book-review-sinews-war-trade-shipping) This dual exposure photograph of a tree and some car headlights will have to suffice as a stand in. Forgive me. It was hard to hold onto the facts when I was seven.
 
 The biggest thing was some sort of sensation of accomplishment. That we did, in fact, successfully stop the hole in the ozone layer from expanding and destroying everything. It left a deep imprint on me. Then 2001 happened and everything changed.
 
