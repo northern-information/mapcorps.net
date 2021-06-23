@@ -28,14 +28,13 @@ mcsass() {
 }
 ```
 
-## Adding Logs
+## Adding Posts
 
-Logs are implemented with [Jekyll collections](https://jekyllrb.com/docs/collections/).
+Posts are implemented with [Jekyll posts](https://jekyllrb.com/docs/posts/). Addtional `yml` front matter is added for metatdata.
 
-1. Visit `mapcorps.net/collections/_logs`.
-2. Copy one of the `.md` files.
-3. Update the info in the frontmatter.
-4. This now appears on the `/university` page.
+1. Visit `mapcorps.net/collections/_posts`.
+2. Copy the latest `.md` files and rename to today's date, followed by your post title. This will become the "permalink" for the post.
+3. Update the info in the frontmatter. Be sure to increment the `content_id` - this is what is used to generate the post numbers on the `/university` page.
 
 ## Adding Pages
 
