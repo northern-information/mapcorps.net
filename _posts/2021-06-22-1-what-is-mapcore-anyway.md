@@ -59,7 +59,7 @@ Depending on your vantage point, mapcore can trace a lineage through recognized 
 
 > If IDM is solitary-armchair music, then mapcore is library-steps music.
 
-If IDM is solitary-armchair music, then mapcore is library-steps music. Simply: mapcore is fun to philosophize and theorcraft. The perfect daydream. In the game Magic: The Gathering, there is the game and then there is the metagame, the game about the game. Mapcore is music with a metagame. (Note, unlike Magic, mapcore is not a zero-sum game.)
+If IDM is solitary-armchair music, then mapcore is library-steps music. Simply: mapcore is fun to philosophize and theorycraft. The perfect daydream. In the game Magic: The Gathering, there is the game and then there is the metagame, the game about the game. Mapcore is music with a metagame. (Note, unlike Magic, mapcore is not a zero-sum game.)
 
 As I said, [we're still trying to understand](https://northern-information.github.io/mapcore/).
 
