@@ -4,7 +4,7 @@ title: "What is Mapcore Anyway"
 date: 2021-06-22
 content_id: 7
 author: "Tyler"
-type: "Praxis"
+type: "Theory"
 ascii: ";"
 x: 4
 y: 29
@@ -31,7 +31,7 @@ I'm going to attempt to explain, in plain words, what I understand **the observa
 
 Metaphysical, emotional, and spiritual aspects of mapcore are for another post.
 
-To set context, I wrote a short poem, then we'll get to the formal elements:
+To set context, I wrote a short poem, then we'll get to the observable elements:
 
 ```
 the mushroom grows
@@ -49,7 +49,7 @@ Mapcore was birthed from livecoding performances. It is alive in the way a class
 
 ## Process
 
-Mapcore artists are keenly concerned with process and craft. The order of operations, the sequence of events, the timing of triggers. Indeed, the core instrument of mapcore seems to be the [Teletype](https://monome.org/docs/teletype), a curious artifact described as an "algorithmic ecosystem." Working knowledge of a specialized scripting language - terse enough to call an [esolang](https://esolangs.org/wiki/Esoteric_programming_language) yet rational enough to appeal to a data scientist - is required to use the Teletype. With this language, mapcore artists program the logical flow of electrical voltage to behave as mutating analog computer. This is not science fiction. Someone is doing this right now while their cat is purring beside them.
+Mapcore artists are keenly concerned with process and craft. The order of operations, the sequence of events, the timing of triggers. Indeed, the core instrument of mapcore seems to be the [Teletype](https://monome.org/docs/teletype), a curious artifact described as an "algorithmic ecosystem." Working knowledge of a specialized scripting language - terse enough to call an [esolang](https://esolangs.org/wiki/Esoteric_programming_language) yet rational enough to appeal to a data scientist - is required to use the Teletype. With this language, mapcore artists program the logical flow of electrical voltage turn their instruments into ever-mutating analog computers. This is not science fiction. Someone is doing this right now while their cat is purring beside them.
 
 ## Lineage
 
@@ -59,7 +59,7 @@ Depending on your vantage point, mapcore can trace a lineage through recognized 
 
 > If IDM is solitary-armchair music, then mapcore is library-steps music.
 
-If IDM is solitary-armchair music, then mapcore is library-steps music. Simply: mapcore is fun to philosophize and theorycraft. The perfect daydream. In the game Magic: The Gathering, there is the game and then there is the metagame, the game about the game. Mapcore is music with a metagame. (Note, unlike Magic, mapcore is not a zero-sum game.)
+If IDM is solitary-armchair music, then mapcore is library-steps music. Simply: mapcore is fun to philosophize and theorycraft. The perfect daydream. In the Magic: The Gathering, there is the game and then there is the metagame: the game about the game. Mapcore is music with a metagame. (Note, unlike Magic, mapcore is not a zero-sum game.)
 
 As I said, [we're still trying to understand](https://northern-information.github.io/mapcore/).
 
@@ -99,8 +99,8 @@ Given the obscene terseness of the Teletype scripting language and the finite se
 
 Recursion is another powerful tool in programs with finite boundaries.
 
-Turtles all the way down.
+Turtles (`@`) all the way down.
 
 ## Conclusion
 
-Mapcore is electronic process music made with math, code, and an open mind.
+Mapcore is electronic process-music made with math, code, and an open mind.
