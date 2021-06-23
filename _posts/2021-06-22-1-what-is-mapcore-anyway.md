@@ -83,7 +83,7 @@ Virology of a timbre. There seems to be a minimalism with mapcore works that rew
 
 ## Otherness
 
-Sapir-Whorf harmonics. Mapcore has an element of otherness that is difficult to pin down. I think this is is a result of avant-garde proclivities meticulously filtered through a von Nuemann architecture.
+Sapir-Whorf harmonics. Mapcore has an element of otherness that is difficult to pin down. I think this is is a result of avant-garde proclivities meticulously filtered through a von Neumann architecture.
 
 ## Emergence
 
