@@ -67,7 +67,7 @@ Violence is simple and sudden. Convalescence requires grace.
 
 ---
 
-I powered up my mapdeck and got to work reconstructing our that which tore us not apart, but torus around...
+I powered up my mapdeck and got to work reconstructing that which tore us not apart, but torus around...
 
 ![Cold Mac](/assets/content/tore-us-cold-mac.jpg)
 
