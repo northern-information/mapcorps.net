@@ -71,4 +71,4 @@ I powered up my mapdeck and got to work reconstructing our that which tore us no
 
 ![Cold Mac](/assets/content/tore-us-cold-mac.jpg)
 
-<iframe src="https://player.twitch.tv/?video=1068359803&parent=127.0.0.1" class="twitch-iframe" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+<iframe src="https://player.twitch.tv/?video=1068359803&parent=mapcorps.net" class="twitch-iframe" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
