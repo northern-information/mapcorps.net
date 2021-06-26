@@ -14,8 +14,6 @@ attributes: ["mapcore", "exposition"]
 
 Mapcore spawned from the performances at [Flash Crash](https://llllllll.co/t/45273), the ongoing discourse in the [Teletype Study Group](https://discord.gg/PGTj9anf9Q), and the [Maps with Trent](https://llllllll.co/t/31528) series. "Mapcore" is a new microgenre that [we're still trying to understand](https://northern-information.github.io/mapcore/).
 
-![What is Mapcore Anyway](/assets/content/what-is-mapcore-anyway.jpg)
-
 I'm going to attempt to explain, in plain words, what I understand **the observable** elements mapcore to be. These are:
 
 1. Alive
