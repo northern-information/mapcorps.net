@@ -12,8 +12,6 @@ $body: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New"
 // map
 
 #map-outer
-  padding: 20px
-  background: $grey
 
 #map-middle
   border: 10px ridge $blue
@@ -28,7 +26,8 @@ $body: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New"
   background: $blue
   display: block
   position: relative
-  
+  cursor: crosshair  
+
 .longitude
   height: 20px
   width: 600px
@@ -112,6 +111,11 @@ audio
   padding: 0 0 20px 0
   border: 5px solid transparent
 
+.twitch-iframe
+  width: 100%
+  height: auto
+  min-height: 600px
+
 a.post-nav
   color: $blue
   cursor: pointer
@@ -132,6 +136,10 @@ a.post-nav.active
   background: $blue
   &:hover
     @extend .global-warming
+
+.post-content iframe
+    width: 100%
+    min-height: 600px
 
 pre
   color: $white
@@ -220,6 +228,8 @@ header
       text-decoration: underline
     .logo
       border-color: $blue
+      svg
+        fill: $red
   h1
     float: left
     font-size: 40px
@@ -231,8 +241,10 @@ header
     border-radius: 50%
     display: inline-block
     margin: 10px
-    border: 4px solid $grey
+    border: 4px solid transparent
     @extend .global-warming
+    svg
+      fill: $white
 
 // animations
 

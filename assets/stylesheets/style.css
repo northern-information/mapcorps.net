@@ -1,7 +1,3 @@
-#map-outer {
-  padding: 20px;
-  background: #CCCCCC; }
-
 #map-middle {
   border: 10px ridge #0000FF;
   width: 100%;
@@ -14,7 +10,8 @@
   display: block;
   background: #0000FF;
   display: block;
-  position: relative; }
+  position: relative;
+  cursor: crosshair; }
 
 .longitude {
   height: 20px;
@@ -91,6 +88,11 @@ audio {
   padding: 0 0 20px 0;
   border: 5px solid transparent; }
 
+.twitch-iframe {
+  width: 100%;
+  height: auto;
+  min-height: 600px; }
+
 a.post-nav {
   color: #0000FF;
   cursor: pointer;
@@ -109,6 +111,10 @@ a.post-nav.active {
   height: auto;
   border: 5px solid transparent;
   background: #0000FF; }
+
+.post-content iframe {
+  width: 100%;
+  min-height: 600px; }
 
 pre {
   color: #EEEEEE;
@@ -191,6 +197,8 @@ header a:hover {
     text-decoration: underline; }
   header a:hover .logo {
     border-color: #0000FF; }
+    header a:hover .logo svg {
+      fill: #FF0000; }
 header h1 {
   float: left;
   font-size: 40px; }
@@ -202,7 +210,9 @@ header .logo {
   border-radius: 50%;
   display: inline-block;
   margin: 10px;
-  border: 4px solid #CCCCCC; }
+  border: 4px solid transparent; }
+  header .logo svg {
+    fill: #EEEEEE; }
 
 .global-warming, .island, a:hover, audio, .home-content img:hover,
 .post-content img:hover, header a:hover, header .logo {

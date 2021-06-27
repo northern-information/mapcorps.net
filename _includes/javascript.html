@@ -93,6 +93,24 @@ function show_content(content_id) {
   redrawMap(content_id);
 }
 
+/*
+ * Highlight x and y in the map on hover.
+ */
+function attachHoverHandler(el) {
+  $(el).hover(
+    function() {
+      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").addClass("highlight-cell");
+      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").addClass("highlight-cell");
+    },
+    function() {
+      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").removeClass("highlight-cell");
+      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").removeClass("highlight-cell");
+    }
+  );
+}
+
+attachHoverHandler(".cell");
+
 function redrawMap(content_id) {
   const cells = $(".cell");
   posts.forEach((post) => {
@@ -107,6 +125,7 @@ function redrawMap(content_id) {
       $(cell).addClass("dormant-island").click(linkClickHandler);
       setTimeout(() => {
         $(cell).addClass(islandClass).removeClass("dormant-island");
+        attachHoverHandler(cell);
       });
     } else {
       console.warn(`${cn} is OFF THE MAP`);
@@ -153,20 +172,6 @@ $(function() {
   $(".post-content").each(function() {
     $(this).find("p").first().addClass("drop-caps");
   });
-
-  /*
-   * Highlight x and y in the map on hover.
-   */
-  $(".cell").hover(
-    function() {
-      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").addClass("highlight-cell");
-      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").addClass("highlight-cell");
-    },
-    function() {
-      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").removeClass("highlight-cell");
-      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").removeClass("highlight-cell");
-    }
-  );
 
 });
 
