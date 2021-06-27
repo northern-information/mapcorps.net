@@ -23,7 +23,7 @@ A kitten meows -
 
 STOP! Fre(ez)e time. Capture it. Be present for a single moment and:
 
-Imagine a the meow, but 3D-printed. It might look something like crystalline sphere: a dense latticework of self-similar patterns at the core expanding in all directions to the "fuzzy" outer reaches of silence. Come to think of it, the sphere is perhaps more of a torus, for the kitten sits in the center thereby dampening the sound.
+Imagine the meow, but 3D-printed. It might look something like a crystalline sphere: a dense latticework of self-similar patterns at the core expanding in all directions to the "fuzzy" outer reaches of silence. Come to think of it, the sphere is perhaps more of a torus, for the kitten sits in the center thereby dampening the sound.
 
 <iframe src="https://en.wikipedia.org/wiki/Torus#/media/File:De_bruijn_torus_3x3.stl"></iframe>
 
