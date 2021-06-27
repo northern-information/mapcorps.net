@@ -4,9 +4,7 @@ title: Styleguide
 permalink: /styleguide/
 ---
 
-<img src="/assets/images/map-corps.png" class="img-fluid" />
-
----
+<img src="/assets/images/map-corps.png" class="img-fluid img-transparent-png" />
 
 ## COLORS
 
@@ -23,11 +21,7 @@ permalink: /styleguide/
 </div>
 </div>
 
----
-
 ## TYPOGRAPHY
 
  - Headings: [https://fonts.google.com/specimen/Michroma](https://fonts.google.com/specimen/Michroma)
  - Body: [Monospace System Font Stack](https://www.digitalocean.com/community/tutorials/css-system-font-stack)
-
----

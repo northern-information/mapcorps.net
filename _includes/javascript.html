@@ -1,17 +1,21 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-{% if page.url == "/" %}
 <script>
+
+
+{% if page.url == "/" %}
+
 $(function() {
   $(".home-content div").each(function() {
     $(this).find("p").first().addClass("drop-caps");
   });
 });
-</script>
-{% endif %}
 
-{% if page.title == "University" %}
-<script>
+
+
+
+{% elsif page.title == "University" %}
+
   const gridClass = (x,y) => `x${x}y${y}`;
 
   function linkClickHandler() {
@@ -175,8 +179,15 @@ $(function() {
 
 });
 
-</script>
+{% else page.title == "Netlabel" %}
+$(function() {
+  $(".page-content").each(function() {
+    $(this).find("p").first().addClass("drop-caps");
+  });
+});
 {% endif %}
+</script>
+
 
 <!-- this was intended for for global js, but do whatever you need to -->
 <script src="{{ "/assets/javascript/script.js" | relative_url }}?{{site.time | date: '%s%N'}}"></script>
