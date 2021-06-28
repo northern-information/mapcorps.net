@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<div class="container-fluid no-padding">
+  <div class="row page-content">
+        {% for artist in site.data.community %}  
+        <div class="col-md-4 col-sm-12 mb-5"><a href="{{ artist.url }}"><img src="/assets/content/{{ artist.img }}" class="img-fluid"/>{{ artist.name }}</a></div>
+        {% endfor %}
+  </div>
+</div>
