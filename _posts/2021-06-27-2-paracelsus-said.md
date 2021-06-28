@@ -15,6 +15,7 @@ attributes: ["null"]
 ![Paracelsus Said](/assets/content/paracelsus-said.jpg)
 
 ```
+
 they told us not to plug the typewriter-keyboard into the synthesizer.
 that it would bridge the work-play continuum, we would not survive as
 a species. but the intervening years wore down our sense of shared
@@ -37,4 +38,5 @@ the shipwreck."
 
 ursula le guin said "the only thing that makes life possible is
 permanent, intolerable uncertainty; not knowing what comes next."
+
 ```

@@ -134,7 +134,7 @@ pre {
   background: #0000FF;
   display: block;
   padding: 5px;
-  border-radius: 5px; }
+  border: 10px ridge #0000FF; }
   pre a, pre a:link, pre a:active, pre a:visited {
     color: #EEEEEE; }
 
@@ -142,7 +142,7 @@ code {
   color: #EEEEEE;
   background: #0000FF;
   padding: 2px;
-  border-radius: 5px; }
+  border-radius: 0 !important; }
 
 main h2 {
   color: #00FF00; }
