@@ -179,6 +179,8 @@ ul li::before {
 
 footer p {
   color: #FF0000; }
+footer a img {
+  display: block; }
 
 .horizons div {
   margin-bottom: 2px;
