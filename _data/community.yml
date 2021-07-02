@@ -32,7 +32,7 @@
 
 - name: romjay
   img: community-romjay.jpg
-  url: soundcloud.com/romjay
+  url: https://soundcloud.com/romjay
 
 - name: run riot run
   img: community-run-riot-run.jpg
