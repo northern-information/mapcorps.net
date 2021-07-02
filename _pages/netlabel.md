@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: netlabel
 title: Netlabel
 permalink: /netlabel/
 ---

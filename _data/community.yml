@@ -10,6 +10,14 @@
   img: community-crystal-crumb.jpg
   url: https://soundcloud.com/iamacube
 
+- name: Inconvenient Body
+  img: community-inconvenient-body.jpg
+  url: https://youtube.com/channel/UC3enr3SH0swxB9kSc4L3UfQ
+
+- name: Konstantine
+  img: community-konstantine.jpg
+  url: https://www.instagram.com/konstantine.f/
+
 - name: LA EL
   img: community-la-el.jpg
   url: https://la-el.bandcamp.com
@@ -17,6 +25,14 @@
 - name: license
   img: community-license.jpg
   url: https://github.com/ryanlaws
+
+- name: Mananahan
+  img: community-mananahan.jpg
+  url: https://www.instagram.com/eim_hin
+
+- name: Matt Lowery
+  img: community-matt-lowery.jpg
+  url: https://mattlowery.bandcamp.com/
 
 - name: Non Verbal Poetry
   img: community-non-verbal-poetry.jpg
@@ -37,6 +53,14 @@
 - name: run riot run
   img: community-run-riot-run.jpg
   url: https://runriotrun.bandcamp.com
+
+- name: scanner darkly
+  img: community-scanner-darkly.jpg
+  url: https://scannerdarkly.bandcamp.com/
+
+- name:  Sent≠Received
+  img: community-sent-not-received.jpg
+  url: https://sent-not-received.bandcamp.com
 
 - name: STUXNET
   img: community-stuxnet.jpg
