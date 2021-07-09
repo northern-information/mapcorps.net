@@ -1,3 +1,11 @@
+.youtube-content {
+  padding: 15px; }
+  .youtube-content iframe {
+    border: 5px solid transparent;
+    width: 100%;
+    min-height: 400px;
+    height: auto; }
+
 #map-middle {
   border: 10px ridge #0000FF;
   width: 100%;
@@ -260,7 +268,7 @@ header .nav-item-black a:hover {
 @media (max-width: 576px) {
   header .nav-item.nav-item-page a {
     padding: 5px; } }
-.global-warming, .island, a:hover, audio, .home-content img:hover,
+.global-warming, .youtube-content iframe, .island, a:hover, audio, .home-content img:hover,
 .page-content img:hover,
 .post-content img:hover, header .nav-item a:hover, header .nav-item-logo .logo {
   -webkit-animation: rgb-cycle 10s linear 0s infinite normal;
