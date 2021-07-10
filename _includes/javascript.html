@@ -45,9 +45,13 @@ $(() => {
         }
 
         const round = (times, el) => {
-            const max = Math.min(el.offsetWidth, el.offsetHeight);
             times['border-radius'] = r(8000, 2000) * 3;
-            return [`border-radius: ${r(max)}px`];
+            return [`border-radius: ${r(100)}% ${r(100)}% ${r(100)}% ${r(100)}%`];
+        }
+
+        const squishText = (times) => {
+            times['letter-spacing'] = r(8000, 2000) * 3;
+            return [`letter-spacing: ${r(200, -200)/100}em`];
         }
 
         const fade = (times) => {
@@ -59,7 +63,7 @@ $(() => {
             times.filter = r(8000,2000) * 3;
             return [
                 `filter: hue-rotate(${
-                    (Math.max(r(300,1)/100),1)**2*r(20,-20)}deg)` + 
+                    (Math.max(r(30,10)/10),1)**2*r(20,-20)}deg)` + 
                 [
                     () => `blur(${r(20)}px)`,
                     () => `contrast(${r(1000)/100}%)`,
@@ -73,11 +77,18 @@ $(() => {
         elements.forEach(async el => {
             await ms(r(12000, 2000));
             while(1) {
+                // https://stackoverflow.com/a/21696585
+                if(!el.offsetParent) {
+                    await ms(r(5000, 2000));    
+                    continue;
+                }
+
                 const times = {};
 
                 let list = [
                     ...(r(3) ? transform(times, el) : []),
                     ...(r(3) ? filter(times) : []),
+                    ...(r(7) > 4 ? squishText(times) : []),
                     //...(r(7) > 4 ? color(times) : []),
                     //...(r(7) > 4 ? bg(times) : []),
                     ...(r(7) > 3 ? round(times, el) : []),
