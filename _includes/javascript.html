@@ -9,33 +9,28 @@ $(() => {
             Math.floor(Math.random() * (max - min)) + min;
         
         const elements = [...document.querySelectorAll('*')]
-                .filter(e => {
-                /*!['HTML','META','TITLE','SCRIPT','LINK','HEAD',
-                    'BODY','HEADER','MAIN','FOOTER'].includes(t.tagName)*/
-                try{ return ['H2','A','P','IFRAME','IMG','UL','LI'].includes(e.tagName) ||
-                        e.className && 
-                            typeof(e.className.includes) === 'function' && (
-                            e.className.includes('horizon') ||
-                            e.className.includes('cell') ||
-                            e.className.includes('tude'))
-                    } catch {
-                            console.log(e, e.className, e.className.includes);
-                        }
+                .filter(({tagName:tag, className:cn }) => {
+                return ['H2','A','P','IFRAME','IMG','UL','LI','PRE']
+                        .includes(tag) ||
+                    cn && cn.includes &&
+                        ['horizon','cell','tude']
+                            .some(s => cn.includes(s))
                 });
 
         const transform = (times) => {
             const t = r(8000,2000) * 3;
             times.transform = t;
             times['transform-origin'] = t;
-            
             return [
-                `transform-origin: ${r(200,-200)/100}% ${r(200,-200)/100}%`,
-                'transform: ' + [
+                `transform-origin: ${r(20000,-20000)/100}% ${r(20000,-20000)/100}%`,
+                `transform: rotate(${
+                    (Math.max(r(600,-100)/100), 1)**2*r(10,-10)}deg)` + 
+                [
                     () => `scale(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
-                    () => `rotate(${r(360,-360)}deg)`,
                     () => `translate(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
-                    () => `skew(${r(360,-360)}deg, ${r(360,-360)}deg)`
-                ][r(4)]()
+                    () => `skew(${r(360,-360)}deg, ${r(360,-360)}deg)`,
+                    () => ''
+                ][Math.min(r(8), 3)]()
             ];
         }
 
@@ -49,23 +44,29 @@ $(() => {
             return [`background-color: #${['f00','0f0','00f','333','000'][r(5)]}`];
         }
 
-        const borderRadius = (times) => {
+        const round = (times, el) => {
+            const max = Math.min(el.offsetWidth, el.offsetHeight);
             times['border-radius'] = r(8000, 2000) * 3;
-            return [`border-radius: ${r(200)}px`];
+            return [`border-radius: ${r(max)}px`];
+        }
+
+        const fade = (times) => {
+            times['opacity'] = r(8000, 2000) * 3;
+            return [`opacity: ${r(100, 20)/100}`];
         }
 
         const filter = (times) => {
-
             times.filter = r(8000,2000) * 3;
-            
             return [
-                'filter: ' + [
+                `filter: hue-rotate(${
+                    (Math.max(r(300,1)/100),1)**2*r(20,-20)}deg)` + 
+                [
                     () => `blur(${r(20)}px)`,
-                    () => `hue-rotate(${r(360,-360)}deg)`,
                     () => `contrast(${r(1000)/100}%)`,
                     () => `translate(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
-                    () => `invert(${r(100)}%)`
-                ][r(5)]()
+                    () => `invert(${r(100)}%)`,
+                    () => ''
+                ][Math.min(r(10), 4)]()
             ];
         }
         
@@ -75,11 +76,12 @@ $(() => {
                 const times = {};
 
                 let list = [
-                    ...(r(7) > 4 ? transform(times) : []),
-                    ...(r(7) > 4 ? color(times) : []),
-                    ...(r(7) > 4 ? bg(times) : []),
-                    ...(r(7) > 4 ? borderRadius(times) : []),
-                    ...(r(7) > 4 ? filter(times) : []),
+                    ...(r(3) ? transform(times, el) : []),
+                    ...(r(3) ? filter(times) : []),
+                    //...(r(7) > 4 ? color(times) : []),
+                    //...(r(7) > 4 ? bg(times) : []),
+                    ...(r(7) > 3 ? round(times, el) : []),
+                    //...(r(7) > 4 ? fade(times) : []),
                 ];
 
                 if (list.length) {
