@@ -62,8 +62,7 @@ $(() => {
         const filter = (times) => {
             times.filter = r(8000,2000) * 3;
             return [
-                `filter: hue-rotate(${
-                    (Math.max(r(30,10)/10),1)**2*r(20,-20)}deg)` + 
+                `filter: hue-rotate(${r(120,20)*r(3,-3)}deg)` + 
                 [
                     () => `blur(${r(20)}px)`,
                     () => `contrast(${r(1000)/100}%)`,
