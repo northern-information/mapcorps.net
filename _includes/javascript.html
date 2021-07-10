@@ -1,7 +1,86 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 <script>
+$(() => {
+    function messYouUp () {
+        $("#uhoh").remove();
+        const ms = (x) => new Promise(resolve => setTimeout(resolve, x));
+        const r = (max=1000, min=0) => 
+            Math.floor(Math.random() * (max - min)) + min;
+        
+        const elements = [...document.querySelectorAll('*')]
+            .filter(t => !['HTML','META','TITLE','SCRIPT','LINK','HEAD',
+                    'BODY','HEADER','MAIN','FOOTER'].includes(t.tagName));
 
+        const transform = (times) => {
+            const t = r(8000,2000) * 3;
+            times.transform = t;
+            times['transform-origin'] = t;
+            
+            return [
+                `transform-origin: ${r(200,-200)/100}% ${r(200,-200)/100}%`,
+                'transform: ' + [
+                    () => `scale(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
+                    () => `rotate(${r(360,-360)}deg)`,
+                    () => `translate(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
+                    () => `skew(${r(360,-360)}deg, ${r(360,-360)}deg)`
+                ][r(4)]()
+            ];
+        }
+
+        const color = (times) => {
+            times.color = r(8000, 2000) * 3;
+            return [`color: #${['f00','0f0','00f','333','000'][r(5)]}`];
+        }
+
+        const bg = (times) => {
+            times['background-color'] = r(8000, 2000) * 3;
+            return [`background-color: #${['f00','0f0','00f','333','000'][r(5)]}`];
+        }
+
+        const filter = (times) => {
+
+            times.filter = r(8000,2000) * 3;
+            
+            return [
+                'filter: ' + [
+                    () => `blur(${r(20)}px)`,
+                    () => `hue-rotate(${r(360,-360)}deg)`,
+                    () => `contrast(${r(1000)/100}%)`,
+                    () => `translate(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
+                    () => `invert(${r(100)}%)`
+                ][r(5)]()
+            ];
+        }
+        
+        elements.forEach(async el => {
+            await ms(r(12000, 2000));
+            while(1) {
+                const times = {};
+
+                let list = [
+                    ...(r(2) ? transform(times) : []),
+                    ...(r(2) ? color(times) : []),
+                    ...(r(2) ? bg(times) : []),
+                    ...(r(5) > 3 ? filter(times) : []),
+                ];
+
+                if (list.length) {
+                    const steez = [
+                        'transition: ' + Object.entries(times)
+                            .map(([k,v]) => `${k} ${v/1000}s`).join(', '),
+                        ...list
+                    ].join('; ')
+                    el.style = steez;
+                    await ms(Math.max(...Object.values(times)));    
+                } else {
+                    await ms(r(5000, 2000));    
+                }
+            };
+        });
+    };
+    $("#uhoh").click(messYouUp);
+});
 
 {% if page.url == "/" %}
 
