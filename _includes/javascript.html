@@ -17,61 +17,54 @@ $(() => {
                             .some(s => cn.includes(s))
                 });
 
-        const transform = (times) => {
+        const accAnim = (obj, times) => {
             const t = r(8000,2000) * 3;
-            times.transform = t;
-            times['transform-origin'] = t;
-            return [
-                `transform-origin: ${r(20000,-20000)/100}% ${r(20000,-20000)/100}%`,
-                `transform: rotate(${
-                    (Math.max(r(600,-100)/100), 1)**2*r(10,-10)}deg)` + 
-                [
-                    () => `scale(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
-                    () => `translate(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
-                    () => `skew(${r(360,-360)}deg, ${r(360,-360)}deg)`,
-                    () => ''
-                ][Math.min(r(8), 3)]()
-            ];
-        }
+            return Object.entries(obj)
+                .map(([k,v]) => (times[k] = t, `${k}: ${v}`));
+        };
 
-        const color = (times) => {
-            times.color = r(8000, 2000) * 3;
-            return [`color: #${['f00','0f0','00f','333','000'][r(5)]}`];
-        }
+        const transform = () => ({
+            'transform-origin': `${r(20000,-20000)/100}% ${r(20000,-20000)/100}%`,
+            'transform': `rotate(${
+                (Math.max(r(600,-100)/100), 1)**2*r(10,-10)}deg)` + 
+            [
+                () => `scale(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
+                () => `translate(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
+                () => `skew(${r(360,-360)}deg, ${r(360,-360)}deg)`,
+                () => ''
+            ][Math.min(r(8), 3)]()
+        });
 
-        const bg = (times) => {
-            times['background-color'] = r(8000, 2000) * 3;
-            return [`background-color: #${['f00','0f0','00f','333','000'][r(5)]}`];
-        }
+        const color = () => ({
+            'color': `#${['f00','0f0','00f','333','000'][r(5)]}`
+        });
 
-        const round = (times, el) => {
-            times['border-radius'] = r(8000, 2000) * 3;
-            return [`border-radius: ${r(100)}% ${r(100)}% ${r(100)}% ${r(100)}%`];
-        }
+        const bg = () => ({
+            'background-color': `#${['f00','0f0','00f','333','000'][r(5)]}`
+        });
 
-        const squishText = (times) => {
-            times['letter-spacing'] = r(8000, 2000) * 3;
-            return [`letter-spacing: ${r(200, -200)/100}em`];
-        }
+        const round = () => ({
+            'border-radius': `${r(100)}% ${r(100)}% ${r(100)}% ${r(100)}%`
+        });
 
-        const fade = (times) => {
-            times['opacity'] = r(8000, 2000) * 3;
-            return [`opacity: ${r(100, 20)/100}`];
-        }
+        const squishText = () => ({
+            'letter-spacing': `${r(200, -200)/100}em`
+        });
 
-        const filter = (times) => {
-            times.filter = r(8000,2000) * 3;
-            return [
-                `filter: hue-rotate(${r(120,20)*r(3,-3)}deg)` + 
+        const fade = (times) => ({
+            'opacity': `${r(100, 20)/100}`
+        });
+
+        const filter = () => ({
+            'filter': `hue-rotate(${r(120,20)*r(3,-3)}deg)` + 
                 [
                     () => `blur(${r(20)}px)`,
                     () => `contrast(${r(1000)/100}%)`,
                     () => `translate(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
-                    () => `invert(${r(100)}%)`,
+                    () => `invert(${r(1)*100}%)`,
                     () => ''
                 ][Math.min(r(10), 4)]()
-            ];
-        }
+        });
         
         elements.forEach(async el => {
             await ms(r(12000, 2000));
@@ -85,13 +78,13 @@ $(() => {
                 const times = {};
 
                 let list = [
-                    ...(r(3) ? transform(times, el) : []),
-                    ...(r(3) ? filter(times) : []),
-                    ...(r(7) > 4 ? squishText(times) : []),
-                    //...(r(7) > 4 ? color(times) : []),
-                    //...(r(7) > 4 ? bg(times) : []),
-                    ...(r(7) > 3 ? round(times, el) : []),
-                    //...(r(7) > 4 ? fade(times) : []),
+                    ...(r(3) ? accAnim(transform(), times) : []),
+                    ...(r(3) ? accAnim(filter(), times) : []),
+                    ...(r(7) > 4 ? accAnim(squishText(), times) : []),
+                    ...(r(7) > 4 ? accAnim(color(), times) : []),
+                    ...(r(7) > 4 ? accAnim(bg(), times) : []),
+                    ...(r(7) > 3 ? accAnim(round(), times) : []),
+                    //...(r(7) > 4 ? accAnim(fade(), times) : []),
                 ];
 
                 if (list.length) {
