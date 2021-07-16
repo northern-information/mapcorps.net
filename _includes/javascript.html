@@ -1,7 +1,108 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 <script>
+$(() => {
+    function messYouUp () {
+        $("#uhoh").remove();
+        const ms = (x) => new Promise(resolve => setTimeout(resolve, x));
+        const r = (max=1000, min=0) => 
+            Math.floor(Math.random() * (max - min)) + min;
+        
+        const elements = [...document.querySelectorAll('*')]
+                .filter(({tagName:tag, className:cn }) => {
+                return ['H2','A','P','IFRAME','IMG','UL','LI','PRE']
+                        .includes(tag) ||
+                    cn && cn.includes &&
+                        ['horizon','cell','tude']
+                            .some(s => cn.includes(s))
+                });
 
+        const accAnim = (obj, times) => {
+            const t = r(8000,2000) * 3;
+            return Object.entries(obj)
+                .map(([k,v]) => (times[k] = t, `${k}: ${v}`));
+        };
+
+        const transform = () => ({
+            'transform-origin': `${r(20000,-20000)/100}% ${r(20000,-20000)/100}%`,
+            'transform': `rotate(${
+                (Math.max(r(600,-100)/100), 1)**2*r(10,-10)}deg)` + 
+            [
+                () => `scale(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
+                () => `translate(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
+                () => `skew(${r(360,-360)}deg, ${r(360,-360)}deg)`,
+                () => ''
+            ][Math.min(r(8), 3)]()
+        });
+
+        const color = () => ({
+            'color': `#${['f00','0f0','00f','333','000'][r(5)]}`
+        });
+
+        const bg = () => ({
+            'background-color': `#${['f00','0f0','00f','333','000'][r(5)]}`
+        });
+
+        const round = () => ({
+            'border-radius': `${r(100)}% ${r(100)}% ${r(100)}% ${r(100)}%`
+        });
+
+        const squishText = () => ({
+            'letter-spacing': `${r(200, -200)/100}em`
+        });
+
+        const fade = (times) => ({
+            'opacity': `${r(100, 20)/100}`
+        });
+
+        const filter = () => ({
+            'filter': `hue-rotate(${r(120,20)*r(3,-3)}deg)` + 
+                [
+                    () => `blur(${r(20)}px)`,
+                    () => `contrast(${r(1000)/100}%)`,
+                    () => `translate(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
+                    () => `invert(${r(1)*100}%)`,
+                    () => ''
+                ][Math.min(r(10), 4)]()
+        });
+        
+        elements.forEach(async el => {
+            await ms(r(12000, 2000));
+            while(1) {
+                // https://stackoverflow.com/a/21696585
+                if(!el.offsetParent) {
+                    await ms(r(5000, 2000));    
+                    continue;
+                }
+
+                const times = {};
+
+                let list = [
+                    ...(r(3) ? accAnim(transform(), times) : []),
+                    ...(r(3) ? accAnim(filter(), times) : []),
+                    ...(r(7) > 4 ? accAnim(squishText(), times) : []),
+                    ...(r(7) > 4 ? accAnim(color(), times) : []),
+                    ...(r(7) > 4 ? accAnim(bg(), times) : []),
+                    ...(r(7) > 3 ? accAnim(round(), times) : []),
+                    //...(r(7) > 4 ? accAnim(fade(), times) : []),
+                ];
+
+                if (list.length) {
+                    const steez = [
+                        'transition: ' + Object.entries(times)
+                            .map(([k,v]) => `${k} ${v/1000}s`).join(', '),
+                        ...list
+                    ].join('; ')
+                    el.style = steez;
+                    await ms(Math.max(...Object.values(times)));    
+                } else {
+                    await ms(r(5000, 2000));    
+                }
+            };
+        });
+    };
+    $("#uhoh").click(messYouUp);
+});
 
 {% if page.url == "/" %}
 
