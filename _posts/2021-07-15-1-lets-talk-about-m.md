@@ -32,7 +32,6 @@ For technical context here, I am solely focusing on Teletype + Just Friends (con
 
 ---
 
-
 > Goal 1: Move the read head of a pattern in tracker so that I could assign the value to a `JF.VOX` command.
 
 The ability to grab notes from `P` seemed to me like fire must have to our ancestors — I was fascinated by it, but couldn't figure out how to hack the basic concept. I could make it work manually (hich wasn't what I wanted to do) but I couldn't make the read head of a pattern move on it's own. This is where `M` came in to play, and I have both `@Obakegaku` and `@DesolationJones` to thank for guiding me to this knowledge.
