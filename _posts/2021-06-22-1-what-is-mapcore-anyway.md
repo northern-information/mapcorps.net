@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What is Mapcore Anyway"
+title: "What is Mapcore Anyway?"
 date: 2021-06-22
 content_id: 7
 author: "Tyler"

@@ -26,6 +26,8 @@ The wizards of weather tracking covet their esoteric maps.
 
 This map describes 7 AM. At 8 AM, the map is no longer relevant.
 
+---
+
 ## Euromaps
 
 ![Eurorack](/assets/content/queery-messy-maps-euro.jpg)
@@ -39,6 +41,8 @@ The modular synth patch can be similarly fleeting. It is a moment in time, it sp
 > A mess can be a picture of life."
 >
 > &mdash; Sara Ahmed, Ibid.
+
+---
 
 ## Telemaps
 
@@ -56,6 +60,8 @@ There is something intrinsic to queerness in accepting fluidity and change, unde
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/omlUyD5boXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="youtube-iframe"></iframe>
 
+---
+
 ## Sour Spots
 
 An exploration of the 'sour spots' mapcore technique, using teletype and grid cyclical sequencer.
@@ -69,6 +75,8 @@ Try it yourself:
 Here, I am using the cyclical sequencer scene to trigger various fifths and octave notes from JF, which is set to a low enough octave that the lowest notes are almost sub audio, and the ramp and FM dials are finding a perfect sour spot of cacophonous FM. I made this sound. It was Nasty. Not in a good way. I didn't like it. This is then sent to [Clouds](https://mutable-instruments.net/modules/clouds/), which adds extra glitching. I am manipulating the trigger patterns and pattern lengths of the four sequencer channels in real time.
 
 There is something about queerness that embraces the sour spots, the messes, the places on the map where some might be lost, others can be found — homes can be found.
+
+---
 
 ## Queermaps
 
