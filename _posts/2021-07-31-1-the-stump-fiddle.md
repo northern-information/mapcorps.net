@@ -69,7 +69,7 @@ At some point in the 20th century, "folk" music became a sound, a genre. It is n
 
 > [...] music transmitted orally, music with unknown composers, music that is played on traditional instruments, music about cultural or national identity, music that changes between generations (folk process), music associated with a people's folklore or music performed by custom over a long period of time. &mdash; [Wikipedia][ref4]
 
-The personal computer is the latest in the canon of a traditional instruments.
+The personal computer is the latest in the canon of traditional instruments.
 
 Folk music is anarchist music. It is/was/will-be-again bottom-up, self-selected patterns, cues, stories, techniques, and principals the community values enough to pass through time. Lo-fi hip hop beats to get meta/draw maps to.
 
