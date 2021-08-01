@@ -11,8 +11,6 @@ y: 29
 class: red
 attributes: ["transistor", "filter"]
 ---
-## The Filter Ping
-
 This log describes how to create a percussive sound with an envelope and a filter. Any envelope and filter will do. You'll also need a way to trigger the envelope, along with a way to listen to the output of the filter.
 
 ![Filter Ping IRL](/assets/content/filter-ping-irl.jpg)

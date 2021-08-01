@@ -11,7 +11,6 @@ y: 4
 class: red
 attributes: ["queer", "timemap", "spacemap", "weathermap"]
 ---
-
 > "A mess can be what does not appear."
 >
 > &mdash; Sara Ahmed, ["A Mess as a Queer Map"](https://feministkilljoys.com/2020/12/23/a-mess-as-a-queer-map/)
