@@ -14,7 +14,7 @@
 <meta property="og:title" content="{{ my_title }}">
 <meta property="og:site_name" content="{{ my_title }}">
 <meta property="og:url" content="{{ site.url }}">
-{% if page.excerpt %}<meta name="og:description" content="{{ page.excerpt | strip_html }}">{% else %}<meta name="og:description" content="{{ site.description }}">{% endif %}
+{% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt | strip_html }}">{% else %}<meta property="og:description" content="{{ site.description }}">{% endif %}
 <meta property="og:type" content="website">
 <meta property="og:image" content="{{ site.url }}/assets/images/map-corps.png">
 
