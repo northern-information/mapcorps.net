@@ -11,13 +11,13 @@ y: 17
 class: victoria
 attributes: ["time", "crystal"]
 ---
-![Out Where The West Begins](/assets/content/the-stump-fiddle-out-where-the-west-begins.jpg)
-
 With [Asteroid 12 Victoria at opposition][ref1] Ryan, Trent, and I once again instantiated a digital island.
 
 A bittersweet wind.
 
 The air of closure.
+
+![Out Where The West Begins](/assets/content/the-stump-fiddle-out-where-the-west-begins.jpg)
 
 ---
 
