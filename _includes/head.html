@@ -2,12 +2,19 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{% if page.url == "/" %}<title>{{ site.title }}</title>{% elsif page.title %}<title>{{ page.title }} | {{ site.title }}</title>{% else %}<title>{{ site.title }}</title>{% endif %}
+{% if page.url == "/" %}
+    {%- assign my_title = site.title | append: " | " | append: site.description -%}
+{%- elsif page.title -%}
+    {%- assign my_title = page.title | append: " | " | append: site.title -%}
+{%- else -%}
+    {%- assign my_title = site.title -%}
+{% endif %}
+<title>{{ my_title }}</title>
 
-<meta property="og:title" content="{{ site.title }}">
-<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ my_title }}">
+<meta property="og:site_name" content="{{ my_title }}">
 <meta property="og:url" content="{{ site.url }}">
-<meta property="og:description" content="{{ site.description }}">
+{% if page.excerpt %}<meta name="og:description" content="{{ page.excerpt | strip_html }}">{% else %}<meta name="og:description" content="{{ site.description }}">{% endif %}
 <meta property="og:type" content="website">
 <meta property="og:image" content="{{ site.url }}/assets/images/map-corps.png">
 
