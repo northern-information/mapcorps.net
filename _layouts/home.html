@@ -2,27 +2,11 @@
 layout: default
 ---
 <div class="container-fluid no-padding">
+  <div class="row youtube-content">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pDPxkfbZWdw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
   <div class="row home-content">
-    <div class="col-md-6 col-sm-12">
-    {{ content }}
-    </div>
-    <div class="col-md-6 col-sm-12">
-      <h2>University of Maps</h2>
-      <a href="{{ site.url}}/university"><img src="/assets/images/university-of-maps.gif"><a/>
-      <br/>
-      <br/>
-      <p><a href="/university"><strong>University of Maps</strong></a> is a weekly content node for practical mapcore poetics. This autofictional account will satisfy both the scientist with detailed step-by-step instructions as well the romanticist with non-deterministic whimsy.</p>
-      <hr>
-      <h2>Further</h2>
-      <ul>
-        <li><a href="/feed.xml">XML FEED</a>
-        <li><a href="https://flashcrash.net">FLASH CRASH</a>
-        <li><a href="https://northern-information.github.io/mapcore">EXEGESIS</a>
-        <li><a href="https://github.com/northern-information/mapcorps.net">GITHUB</a>
-        <li><a href="https://mapcorps.bandcamp.com">BANDCAMP</a>
-        <li><a href="/assets/images/ai.png">.</a>
-      </ul>
-      <hr>
-    </div>
+    {% include home-university.html %}
+    {% include home-netlabel.html %}
   </div>
 </div>

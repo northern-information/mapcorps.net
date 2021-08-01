@@ -1,6 +1,10 @@
-#map-outer {
-  padding: 20px;
-  background: #CCCCCC; }
+.youtube-content {
+  padding: 15px; }
+  .youtube-content iframe {
+    border: 5px solid transparent;
+    width: 100%;
+    min-height: 400px;
+    height: auto; }
 
 #map-middle {
   border: 10px ridge #0000FF;
@@ -14,7 +18,8 @@
   display: block;
   background: #0000FF;
   display: block;
-  position: relative; }
+  position: relative;
+  cursor: crosshair; }
 
 .longitude {
   height: 20px;
@@ -43,6 +48,9 @@
 
 .present-island {
   color: #EEEEEE; }
+
+.highlight-cell {
+  background: #FF0000; }
 
 ::selection {
   background: #00FF00;
@@ -88,6 +96,11 @@ audio {
   padding: 0 0 20px 0;
   border: 5px solid transparent; }
 
+.twitch-iframe {
+  width: 100%;
+  height: auto;
+  min-height: 600px; }
+
 a.post-nav {
   color: #0000FF;
   cursor: pointer;
@@ -100,19 +113,36 @@ a.post-nav.active {
   color: #EEEEEE;
   background: #0000FF; }
 
-.home-content img,
-.post-content img {
+.home-content,
+.page-content,
+.post-content {
+  text-overflow: clip ellipsis; }
+  .home-content img,
+  .page-content img,
+  .post-content img {
+    width: 100%;
+    height: auto;
+    border: 5px solid transparent;
+    background: #0000FF; }
+  .home-content img.img-transparent-png,
+  .page-content img.img-transparent-png,
+  .post-content img.img-transparent-png {
+    background: #EEEEEE; }
+    .home-content img.img-transparent-png:hover,
+    .page-content img.img-transparent-png:hover,
+    .post-content img.img-transparent-png:hover {
+      background: none !important; }
+
+.post-content iframe {
   width: 100%;
-  height: auto;
-  border: 5px solid transparent;
-  background: #0000FF; }
+  min-height: 600px; }
 
 pre {
   color: #EEEEEE;
   background: #0000FF;
   display: block;
   padding: 5px;
-  border-radius: 5px; }
+  border: 10px ridge #0000FF; }
   pre a, pre a:link, pre a:active, pre a:visited {
     color: #EEEEEE; }
 
@@ -120,15 +150,15 @@ code {
   color: #EEEEEE;
   background: #0000FF;
   padding: 2px;
-  border-radius: 5px; }
+  border-radius: 0 !important; }
 
 main h2 {
-  color: #00FF00; }
+  color: #111111; }
 main hr {
   border-top: 5px solid #00FF00; }
 
 ol {
-  padding: 0 0 0 1rem; }
+  padding: 0 0 0 2rem; }
 
 ol li {
   counter-increment: list;
@@ -140,8 +170,8 @@ ol li:before {
   content: counter(list);
   position: absolute;
   font-weight: bold;
-  width: 1rem;
-  margin-left: -1rem; }
+  width: 2rem;
+  margin-left: -2rem; }
 
 ul {
   padding: 0 0 0 1rem;
@@ -157,6 +187,10 @@ ul li::before {
 
 footer p {
   color: #FF0000; }
+footer a img {
+  display: block; }
+footer #uhoh {
+  cursor: help; }
 
 .horizons div {
   margin-bottom: 2px;
@@ -178,31 +212,67 @@ footer .horizons div {
 header .horizons div {
   border-color: #0000FF; }
 
-header a, header a:link, header a:active, header a:visited {
-  color: #111111;
+header .nav-item a, header .nav-item a:link, header .nav-item a:active, header .nav-item a:visited {
   display: inline-block;
-  width: 100%; }
-header a:hover {
-  color: #0000FF !important; }
-  header a:hover h1 {
-    text-decoration: underline; }
-  header a:hover .logo {
-    border-color: #0000FF; }
-header h1 {
+  width: 100%;
+  height: 100%;
+  font-family: "Michroma", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase; }
+header .nav-item a:hover {
+  text-decoration: underline; }
+header .nav-item-logo a:hover h1 {
+  text-decoration: underline; }
+header .nav-item-logo a:hover .logo {
+  border-color: #0000FF; }
+  header .nav-item-logo a:hover .logo svg {
+    fill: #FF0000; }
+header .nav-item-logo h1 {
   float: left;
   font-size: 40px; }
-header .logo {
-  float: right;
+header .nav-item-logo .logo {
+  float: left;
   height: 90px;
   width: 90px;
   background-color: #111111;
   border-radius: 50%;
   display: inline-block;
   margin: 10px;
-  border: 4px solid #CCCCCC; }
+  border: 4px solid transparent; }
+  header .nav-item-logo .logo svg {
+    fill: #EEEEEE; }
+header .nav-item-page a {
+  padding: 70px 0 0 5px; }
+header .nav-item-white a, header .nav-item-white a:link, header .nav-item-white a:active, header .nav-item-white a:visited {
+  background: #EEEEEE;
+  color: #0000FF; }
+header .nav-item-red a, header .nav-item-red a:link, header .nav-item-red a:active, header .nav-item-red a:visited {
+  background: #FF0000;
+  color: #EEEEEE; }
+header .nav-item-red a:hover {
+  color: #FF0000; }
+header .nav-item-green a, header .nav-item-green a:link, header .nav-item-green a:active, header .nav-item-green a:visited {
+  background: #00FF00;
+  color: #111111; }
+header .nav-item-green a:hover {
+  color: #00FF00; }
+header .nav-item-blue a, header .nav-item-blue a:link, header .nav-item-blue a:active, header .nav-item-blue a:visited {
+  background: #0000FF;
+  color: #EEEEEE; }
+header .nav-item-blue a:hover {
+  color: #0000FF; }
+header .nav-item-black a, header .nav-item-black a:link, header .nav-item-black a:active, header .nav-item-black a:visited {
+  background: #111111;
+  color: #EEEEEE; }
+header .nav-item-black a:hover {
+  color: #111111; }
 
-.global-warming, .island, a:hover, audio, .home-content img:hover,
-.post-content img:hover, header a:hover, header .logo {
+@media (max-width: 576px) {
+  header .nav-item.nav-item-page a {
+    padding: 5px; } }
+.global-warming, .youtube-content iframe, .island, a:hover, button, audio, .home-content img:hover,
+.page-content img:hover,
+.post-content img:hover, header .nav-item a:hover, header .nav-item-logo .logo {
   -webkit-animation: rgb-cycle 10s linear 0s infinite normal;
   -moz-animation: rgb-cycle 10s linear 0s infinite normal;
   -ms-animation: rgb-cycle 10s linear 0s infinite normal;

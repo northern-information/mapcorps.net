@@ -1,17 +1,122 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-{% if page.url == "/" %}
 <script>
+$(() => {
+    function messYouUp () {
+        $("#uhoh").remove();
+        const ms = (x) => new Promise(resolve => setTimeout(resolve, x));
+        const r = (max=1000, min=0) => 
+            Math.floor(Math.random() * (max - min)) + min;
+        
+        const elements = [...document.querySelectorAll('*')]
+                .filter(({tagName:tag, className:cn }) => {
+                return ['H2','A','P','IFRAME','IMG','UL','LI','PRE']
+                        .includes(tag) ||
+                    cn && cn.includes &&
+                        ['horizon','cell','tude']
+                            .some(s => cn.includes(s))
+                });
+
+        const accAnim = (obj, times) => {
+            const t = r(8000,2000) * 3;
+            return Object.entries(obj)
+                .map(([k,v]) => (times[k] = t, `${k}: ${v}`));
+        };
+
+        const transform = () => ({
+            'transform-origin': `${r(20000,-20000)/100}% ${r(20000,-20000)/100}%`,
+            'transform': `rotate(${
+                (Math.max(r(600,-100)/100), 1)**2*r(10,-10)}deg)` + 
+            [
+                () => `scale(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
+                () => `translate(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
+                () => `skew(${r(360,-360)}deg, ${r(360,-360)}deg)`,
+                () => ''
+            ][Math.min(r(8), 3)]()
+        });
+
+        const color = () => ({
+            'color': `#${['f00','0f0','00f','333','000'][r(5)]}`
+        });
+
+        const bg = () => ({
+            'background-color': `#${['f00','0f0','00f','333','000'][r(5)]}`
+        });
+
+        const round = () => ({
+            'border-radius': `${r(100)}% ${r(100)}% ${r(100)}% ${r(100)}%`
+        });
+
+        const squishText = () => ({
+            'letter-spacing': `${r(200, -200)/100}em`
+        });
+
+        const fade = (times) => ({
+            'opacity': `${r(100, 20)/100}`
+        });
+
+        const filter = () => ({
+            'filter': `hue-rotate(${r(120,20)*r(3,-3)}deg)` + 
+                [
+                    () => `blur(${r(20)}px)`,
+                    () => `contrast(${r(1000)/100}%)`,
+                    () => `translate(${r(200,-200)/100}%, ${r(200,-200)/100}%)`,
+                    () => `invert(${r(1)*100}%)`,
+                    () => ''
+                ][Math.min(r(10), 4)]()
+        });
+        
+        elements.forEach(async el => {
+            await ms(r(12000, 2000));
+            while(1) {
+                // https://stackoverflow.com/a/21696585
+                if(!el.offsetParent) {
+                    await ms(r(5000, 2000));    
+                    continue;
+                }
+
+                const times = {};
+
+                let list = [
+                    ...(r(3) ? accAnim(transform(), times) : []),
+                    ...(r(3) ? accAnim(filter(), times) : []),
+                    ...(r(7) > 4 ? accAnim(squishText(), times) : []),
+                    ...(r(7) > 4 ? accAnim(color(), times) : []),
+                    ...(r(7) > 4 ? accAnim(bg(), times) : []),
+                    ...(r(7) > 3 ? accAnim(round(), times) : []),
+                    //...(r(7) > 4 ? accAnim(fade(), times) : []),
+                ];
+
+                if (list.length) {
+                    const steez = [
+                        'transition: ' + Object.entries(times)
+                            .map(([k,v]) => `${k} ${v/1000}s`).join(', '),
+                        ...list
+                    ].join('; ')
+                    el.style = steez;
+                    await ms(Math.max(...Object.values(times)));    
+                } else {
+                    await ms(r(5000, 2000));    
+                }
+            };
+        });
+    };
+    $("#uhoh").click(messYouUp);
+});
+
+{% if page.url == "/" %}
+
 $(function() {
   $(".home-content div").each(function() {
     $(this).find("p").first().addClass("drop-caps");
   });
 });
-</script>
-{% endif %}
 
-{% if page.title == "University" %}
-<script>
+
+
+
+{% elsif page.title == "University" %}
+
   const gridClass = (x,y) => `x${x}y${y}`;
 
   function linkClickHandler() {
@@ -52,7 +157,7 @@ function makeGrid(x, y) {
     var cells = "";
     for (var ix = x - 1; ix >= 0; ix--) {
       const className = gridClass(ix, iy);
-      cells += makeCell(className);
+      cells += makeCell(ix, iy, className);
     }
     out += makeRow(cells);
   }
@@ -63,8 +168,8 @@ function makeRow(cells) {
   return '<div class="longitude">' + cells + "</div>";
 }
 
-function makeCell(className) {
-  return '<div class="cell ' + className + '">.</div>';
+function makeCell(x, y, className) {
+  return '<div class="cell '+ className + '" data-cell-x="' + x + '" data-cell-y="' + y + '">.</div>';
 }
 
 if (document.getElementById("map-inner")) {
@@ -93,6 +198,24 @@ function show_content(content_id) {
   redrawMap(content_id);
 }
 
+/*
+ * Highlight x and y in the map on hover.
+ */
+function attachHoverHandler(el) {
+  $(el).hover(
+    function() {
+      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").addClass("highlight-cell");
+      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").addClass("highlight-cell");
+    },
+    function() {
+      $(".cell[data-cell-x='" + $(this).attr("data-cell-x") + "']").removeClass("highlight-cell");
+      $(".cell[data-cell-y='" + $(this).attr("data-cell-y") + "']").removeClass("highlight-cell");
+    }
+  );
+}
+
+attachHoverHandler(".cell");
+
 function redrawMap(content_id) {
   const cells = $(".cell");
   posts.forEach((post) => {
@@ -102,11 +225,12 @@ function redrawMap(content_id) {
       // not a strict compare because they might be number or string
       const islandClass = post.content_id == content_id ? 
         "present-island" : "island";
-      cell.outerHTML = `<a class="cell ${cn} dormant-island" href="#${post.content_id}">${post.ascii}</div>`;
+      cell.outerHTML = `<a class="cell ${cn} dormant-island" href="#${post.content_id}" data-cell-x="${post.x}" data-cell-y="${post.y}">${post.ascii}</div>`;
       cell = document.querySelector(`.${cn}`);
       $(cell).addClass("dormant-island").click(linkClickHandler);
       setTimeout(() => {
         $(cell).addClass(islandClass).removeClass("dormant-island");
+        attachHoverHandler(cell);
       });
     } else {
       console.warn(`${cn} is OFF THE MAP`);
@@ -120,16 +244,21 @@ function isUniversity(a) {
 }
 
 $(function() {
-  // Posts main navigation.
+ /*
+  * Posts main navigation.
+  */
   $("a.post-nav").click(function() {
     show_content($(this).data("content-id"))
   });
 
-  // Inline post navigation.
-
+ /*
+  * Inline post navigation.
+  */
   $("a").click(linkClickHandler);
 
-  // Set the initial log view based on the anchor in the URL.
+  /*
+   * Set the initial log view based on the anchor in the URL.
+   */
   var content_id = window.location.hash.substr(1) === "" ? 1 : window.location.hash.substr(1);
   content_id && setTimeout(show_content, 0, content_id);
 
@@ -151,8 +280,16 @@ $(function() {
 
 });
 
-</script>
+{% else page.title == "Netlabel" %}
+$(function() {
+  $(".page-content").each(function() {
+    $(this).find("p").first().addClass("drop-caps");
+  });
+});
 {% endif %}
+</script>
 
-<!-- this was intended for for global js, but do whatever you need to -->
+
+<!-- this was intended for for global js, but do whatever you need to 
 <script src="{{ "/assets/javascript/script.js" | relative_url }}?{{site.time | date: '%s%N'}}"></script>
+-->
