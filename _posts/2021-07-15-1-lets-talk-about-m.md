@@ -11,7 +11,6 @@ y: 11
 class: orange
 attributes: ["mouth"]
 ---
-
 Advanced Teletype hackers probably (definitely) have a firm grasp of the concepts I'm going to cover, so this is definitely aimed at those folks just getting started, or those folks like me who may be struggling to connect some dots.
 
 For other members of the [TT Study Group Discord](https://discord.gg/f5AWwvUkt8), that title may be funny because it is a play on the name of my current thesis/focus of study, which is "Let's Talk About P". Before I get into my topic, I would love to encourage you to engage with other cartographically-minded folks at the [Lines forum](https://llllllll.co). I would also like to thank folks there and in the Discord for all of the help they've given me in understanding Teletype—community is a sacred thing.
