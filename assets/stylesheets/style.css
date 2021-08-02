@@ -152,6 +152,21 @@ code {
   padding: 2px;
   border-radius: 0 !important; }
 
+table {
+  color: #EEEEEE;
+  background: #0000FF;
+  padding: 5px;
+  border: 10px ridge #0000FF;
+  width: 100%; }
+  table tr {
+    border-bottom: 1px solid #FF0000; }
+    table tr td,
+    table tr th {
+      padding-left: 5px; }
+      table tr td strong,
+      table tr th strong {
+        color: #FF0000; }
+
 main h2 {
   color: #111111; }
 main hr {
