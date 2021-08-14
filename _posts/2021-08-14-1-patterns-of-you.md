@@ -27,11 +27,11 @@ Many centuries later - perhaps - pitch.
 
 Noise at this pitch. Noise at that pitch.
 
-Yet, further - perhaps - envelope. And sequencing. And a myriad of strings that came to abstractly symbolize things we must consentually agree exist. Stone. Water. Food. Sky. Cold. Fire.
+Yet, further - perhaps - envelope. And sequencing. And a myriad of strings that came to abstractly symbolize things we must consensually agree exist. Stone. Water. Food. Sky. Cold. Fire.
 
-We must consentually agree exist.
+We must consensually agree exist.
 
-We must consentually agree.
+We must consensually agree.
 
 We must agree.
 
