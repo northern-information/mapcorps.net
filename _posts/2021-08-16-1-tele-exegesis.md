@@ -32,7 +32,7 @@ actually generative.
 the first incarnation of teletype was born, with some minor abuse of
 max's semicolon message system:
 
-![](https://raw.githubusercontent.com/monome/teletype-maxpat/main/teletype.png)
+![](/assets/content/tele-exegesis-teletype.png)
 
 meadowphysics now routed its triggers through 8 little "scripts" that
 could create a note, advance a note in a sequence, send CC, and change
