@@ -58,9 +58,13 @@
   img: community-scanner-darkly.jpg
   url: https://scannerdarkly.bandcamp.com/
 
-- name:  Sent≠Received
+- name: Sent≠Received
   img: community-sent-not-received.jpg
   url: https://sent-not-received.bandcamp.com
+
+- name: Sidereal Lobby
+  img: community-sidereal-lobby.jpg
+  url: https://sidereallobby.com
 
 - name: STUXNET
   img: community-stuxnet.jpg

@@ -6,6 +6,14 @@ permalink: /styleguide/
 
 <img src="/assets/images/map-corps.png" class="img-fluid img-transparent-png" />
 
+## WALLPAPER DESKTOP
+
+<img src="/assets/content/wallpaper-gold-lizard-desktop.jpg" />
+
+## WALLPAPER PHONE
+
+<img src="/assets/content/wallpaper-gold-lizard-phone.jpg" />
+
 ## COLORS
 
 <div class="container-fluid">
@@ -25,3 +33,4 @@ permalink: /styleguide/
 
  - Headings: [https://fonts.google.com/specimen/Michroma](https://fonts.google.com/specimen/Michroma)
  - Body: [Monospace System Font Stack](https://www.digitalocean.com/community/tutorials/css-system-font-stack)
+

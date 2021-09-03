@@ -1,0 +1,23 @@
+- name: MAPSQUEST
+  artist: MAPSQUEST
+  date: 210704
+  img: mapsquest.jpg
+  url: https://mapcorps.bandcamp.com/album/mapsquest-2
+
+- name: Beaches
+  artist: Sidereal Lobby
+  date: 210904
+  img: beaches.jpg
+  url: https://sidereallobby.bandcamp.com/album/beaches
+
+- name: FCIV
+  artist: Sidereal Lobby
+  date: 210904
+  img: fciv.jpg
+  url: https://sidereallobby.bandcamp.com/album/fciv
+
+- name: Deep State Music
+  artist: Sidereal Lobby
+  date: 210904
+  img: deep-state-music.jpg
+  url: https://sidereallobby.bandcamp.com/album/deep-state-music

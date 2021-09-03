@@ -1,11 +1,16 @@
 ---
 layout: default
 ---
-<div class="container-fluid no-padding">
-  <div class="row page-content">
-    <div class="col-md-6 col-sm-12">
-      {{ content }}
+<div class="container-fluid no-padding page-content">
+  <div class="row">
+    <div class="col">
+      <h1>RELEASES</h1>
     </div>
-    {% include home-netlabel.html %}
+  </div>
+  <div class="row">
+  {% assign silo = site.data.releases | sort:"date" | reverse  %}
+  {% for release in silo %}
+    <div class="col-md-4 col-sm-12 mb-5"><a href="{{ release.url }}"><img src="/assets/content/{{ release.img }}" class="img-fluid"/>{{ release.name }}</a></div>
+    {% endfor %}
   </div>
 </div>

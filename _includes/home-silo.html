@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1>Sidereal Lobby</h1>
+    </div>
+  </div>
+  <div class="row">
+    {% assign silo = site.data.releases | where:"artist","Sidereal Lobby" | sort:"date" | reverse  %}
+    {% for release in silo %}
+    <div class="col-md-4 col-sm-12"><a href="{{ release.url }}"><img src="/assets/content/{{ release.img }}" class="img-fluid"/>{{ release.name }}</a></div>
+    {% endfor %}
+  </div>
+</div>
