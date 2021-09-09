@@ -1,3 +1,8 @@
+@keyframes logo-rotate {
+  0% {
+    transform: rotateY(0deg); }
+  100% {
+    transform: rotateY(360deg); } }
 .youtube-content {
   padding: 15px; }
   .youtube-content iframe {
@@ -246,6 +251,10 @@ header .nav-item-logo h1 {
   font-size: 40px; }
 header .nav-item-logo .logo {
   float: left;
+  animation-name: logo-rotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
   height: 90px;
   width: 90px;
   background-color: #111111;
@@ -286,7 +295,7 @@ header .nav-item-black a:hover {
     padding: 5px; } }
 .global-warming, .youtube-content iframe, .island, a:hover, button, audio, .home-content img:hover,
 .page-content img:hover,
-.post-content img:hover, header .nav-item a:hover, header .nav-item-logo .logo {
+.post-content img:hover, header .nav-item a:hover {
   -webkit-animation: rgb-cycle 10s linear 0s infinite normal;
   -moz-animation: rgb-cycle 10s linear 0s infinite normal;
   -ms-animation: rgb-cycle 10s linear 0s infinite normal;
