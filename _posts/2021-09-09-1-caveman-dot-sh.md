@@ -37,7 +37,7 @@ The other school is that of pragmatism: whatever gets the job done is "good enou
 
 ## caveman.sh
 
-While "mapcore" is a *philosophy*, `caveman.sh` is a *strategy*. Philosophies shape how you see the world. Strategies inform how you approach tactical goals. And tactics are the least common denominator of action your actions.
+While "mapcore" is a *philosophy*, `caveman.sh` is a *strategy*. Philosophies shape how you see the world. Strategies inform how you approach tactical goals. And tactics are the least common denominator of intention made manifest.
 
 > Philosophies shape how you see reality which lead to strategy for negotiating with the world. Strategies inform how you approach tactical goals.
 
