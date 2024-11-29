@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "dev": "bundle exec jekyll serve --baseurl '' --livereload",
+    "css": "sass --watch assets/stylesheets/style.sass:assets/stylesheets/style.css",
+    "build": "./build.sh"
+  }
+}
